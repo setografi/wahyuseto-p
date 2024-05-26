@@ -8,7 +8,7 @@ export default function ElementsCard() {
           <div className="flex items-center mr-auto">
             <div className="inline-flex w-12 h-12">
               <img
-                src=""
+                src="https://setografi.vercel.app/_astro/profileimage.DHpe1amW_1JoshG.webp"
                 alt="wahyu seto pranata"
                 className=" relative w-12 h-12 object-cover rounded-2xl"
               />
