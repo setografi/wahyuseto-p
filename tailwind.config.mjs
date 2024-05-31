@@ -4,16 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        vermilionMain: "#F56742",
-        scarletSecond: "#EB493F",
-        vividOrange: "#F26A1B",
-        saffronYellow: "#FFCD25",
-        mintGreen: "#7EFFA2",
-        aquaGreen: "#10FFBA",
+        mediumVermilion: "#D94E41",
+        redOrange: "#F22F1D",
+        vividRed: "#F21905",
+        grayNetral: "#736F70",
+        goldenRod: "#F29727",
         whiteText: "#F2F2F2",
       },
       fontFamily: {
         lexendDeca: ["Lexend Deca", "sans-serif"],
+        ibmPlexmono: ["IBM Plex Mono", "monospace"],
       },
       rotate: {
         360: "360deg",
