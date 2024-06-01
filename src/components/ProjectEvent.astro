@@ -2,6 +2,14 @@
 import MusicPlayerEvent from "./MusicPlayerEvent";
 import ProgressEvent from "./ProgressEvent.astro";
 
+import { Image } from "astro:assets";
+import ProjectImage from "../assets/profileimage.jpg";
+
+import LogoImage from "../assets/logo_6.png";
+import SpinImage from "../assets/spin-image.svg";
+
+import ImageEvent from "./ImageEvent.astro";
+
 export const frontmatter = {
   title: 'Projects',
 };
@@ -17,80 +25,61 @@ export const frontmatter = {
       <ProgressEvent />
     </div>
 
-      <div class="bg-white text-CatalinaBlue row-span-2 rounded-xl overflow-hidden relative">
-        <div class="flex flex-col items-center mt-20">
-          <div class="w-20 animate-bounce">
-            <img src="" alt="comming soon..." />
-          </div>
+    <div class="relative bg-zinc-800 text-whiteText row-span-2 rounded-xl overflow-hidden">
+      <div class="relative flex flex-col items-center mt-20 z-10">
+        <div class="w-20 animate-bounce">
+          <Image src={LogoImage} alt="project 1"/>
+        </div>
 
-          <h2 class="p-4 text-xl font-medium text-center">
-            This page isn't ready yet
-          </h2>
-          <a class="bg-ClassicRose text-DarkBlueGrey rounded-xl py-3 px-5 font-medium text-sm cursor-pointer duration-300 hover:bg-PastelPink hover:text-RichBlack">
-            Okay
-          </a>
-        </div>
-        <div class="rounded-full bg-gradient-to-tr from-Flame to-Mauve animate-spin-slow aspect-square w-[18rem] overflow-hidden absolute top-[21rem] left-[3rem]">
-          <img src="" alt="" />
-        </div>
+        <h2 class="p-4 text-xl font-medium text-center">
+          This page isn't ready yet
+        </h2>
+        
+        <a class="bg-blueTailwind text-whiteText rounded-xl py-3 px-5 font-medium text-sm cursor-pointer duration-300 hover:bg-grayNetral hover:text-gray-400">
+          Okay
+        </a>
       </div>
+      
+      <div class="absolute top-[22rem] left-[3rem] w-[18rem] rounded-full bg-gradient-to-tr from-whiteText to-grayNetral animate-spin-slow aspect-square overflow-hidden">
+        <Image class="w-full h-full object-cover" src={SpinImage} alt="Animation Image" />
+      </div>
+    </div>
 
-      <div class="bg-transparent col-start-3 row-start-3 rounded-xl overflow-hidden">
-        <div class="relative flex flex-col justify-center">
-          <div class="absolute inset-0"></div>
-          <div class="group relative m-0 flex w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:w-full">
-            <div class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
-              <img src="https://images.unsplash.com/photo-1506187334569-7596f62cf93f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3149&q=80" class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110" alt="" />
-            </div>
-            <div class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
-              <h1 class="font-serif text-2xl font-bold text-white shadow-xl">Azores</h1>
-              <h1 class="text-sm font-light text-gray-200 shadow-xl">A Little Paradise in Portugal</h1>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="w-full max-h-min bg-transparent col-start-3 row-start-3 rounded-xl overflow-hidden">
+      <ImageEvent 
+        imagesource="/img/toketa_cake.png"
+        imagetitle="Project 2"
+        imagedesc="This is Project 2"
+      />
+    </div>
 
-      <div class="bg-transparent col-span-2 row-span-2 col-start-1 row-start-2 rounded-xl overflow-hidden">
-        <div class="relative flex flex-col justify-center">
-          <div class="absolute inset-0"></div>
-          <div class="group relative m-0 flex h-72 w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:w-full">
-            <div class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
-              <img src="https://images.unsplash.com/photo-1506187334569-7596f62cf93f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3149&q=80" class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110" alt="" />
-            </div>
-            <div class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
-              <h1 class="font-serif text-2xl font-bold text-white shadow-xl">Azores</h1>
-              <h1 class="text-sm font-light text-gray-200 shadow-xl">A Little Paradise in Portugal</h1>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="w-full max-h-min bg-transparent col-span-2 row-span-2 col-start-1 row-start-2 rounded-xl overflow-hidden">
+      <ImageEvent 
+        imagesource="/img/pondok_santai1.jpeg"
+        imagetitle="Project 1"
+        imagedesc="This is Project 1"
+      />
+    </div>
 
       <div class="bg-transparent row-start-4 rounded-xl overflow-hidden">
-        <div class="relative flex flex-col justify-center">
-          <div class="absolute inset-0"></div>
-          <div class="group relative m-0 flex h-72 w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:w-full">
-            <div class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
-              <img src="https://images.unsplash.com/photo-1506187334569-7596f62cf93f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3149&q=80" class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110" alt="" />
-            </div>
-            <div class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
-              <h1 class="font-serif text-2xl font-bold text-white shadow-xl">Azores</h1>
-              <h1 class="text-sm font-light text-gray-200 shadow-xl">A Little Paradise in Portugal</h1>
-            </div>
-          </div>
-        </div>
+        <ImageEvent 
+        imagesource="/img/setan_gurih.png"
+        imagetitle="Project 3"
+        imagedesc="This is Project 3"
+      />
       </div>
 
-      <div class="bg-white text-RichBlack col-span-2 row-start-4 rounded-xl overflow-hidden">
-        <div class="bg-gray-200 flex justify-center items-center">
-          <div class="w-full bg-white border-2 border-gray-300 p-5 rounded-md tracking-wide shadow-lg">
+      <div class="w-full max-h-min bg-transparent col-span-2 row-start-4 rounded-xl overflow-hidden">
+        <div class="w-full h-full bg-zinc-800 flex justify-center items-center">
+          <div class="w-full p-5 rounded-md tracking-wide shadow-lg">
              <div id="header" class="flex"> 
-                <img alt="mountain" class="w-45 rounded-md border-2 border-gray-300" src="https://picsum.photos/seed/picsum/200" />
+                <img alt="mountain" class="w-48 h-48 rounded-md border-2 border-gray-300" src="/img/sorehomeview.png" />
                 <div id="body" class="flex flex-col ml-5">
-                   <h4 id="name" class="text-xl font-semibold mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
-                   <p id="job" class="text-gray-800 mt-2">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                   <h4 id="name" class="text-whiteText text-xl font-semibold mb-2">SORE Pixel Crafters</h4>
+                   <p id="job" class="text-whiteText mt-2">SORE Pixel Crafters is a digital agency that specializes in UI/UX Design and Web Development.</p>
                    <div class="flex mt-5">
-                      <img alt="avatar" class="w-6 rounded-full border-2 border-gray-300" src="https://picsum.photos/seed/picsum/200" />
-                      <p class="ml-3">John Doe</p>
+                      <Image alt="avatar" class="w-6 rounded-full" src={ProjectImage} />
+                      <p class="text-whiteText ml-3">Wahyu Seto Pranata</p>
                    </div>
                 </div>
              </div>
@@ -100,7 +89,7 @@ export const frontmatter = {
   </div>
     
   <div class="grid grid-cols-3 grid-rows-6 gap-4 mt-5">
-    <div class="row-span-2 bg-transparent rounded-xl overflow-hidden">
+    <div class="row-span-2 bg-zinc-800 rounded-xl overflow-hidden">
       <div class="flex flex-col gap-1 justify-center items-start w-[280px] bg-white dark:bg-transparent px-4 py-4 shadow-xl rounded-lg">
         <p class="font-semibold text-xl text-gray-600 mb-2">Tags</p>
         <div class="flex flex-wrap gap-2">
@@ -136,37 +125,23 @@ export const frontmatter = {
     </div>
 
     <div class="row-span-2 bg-transparent rounded-xl overflow-hidden">
-      <div class="relative flex flex-col justify-center">
-        <div class="absolute inset-0"></div>
-        <div class="group relative m-0 flex w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:w-full">
-          <div class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
-            <img src="https://images.unsplash.com/photo-1506187334569-7596f62cf93f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3149&q=80" class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110" alt="" />
-          </div>
-          <div class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
-            <h1 class="font-serif text-2xl font-bold text-white shadow-xl">Azores</h1>
-            <h1 class="text-sm font-light text-gray-200 shadow-xl">A Little Paradise in Portugal</h1>
-          </div>
-        </div>
-      </div>
+      <ImageEvent 
+        imagesource="/img/SoreLogo.png"
+        imagetitle="Project 5"
+        imagedesc="This is Project 5"
+      />
     </div>
 
-    <div class="row-span-2 bg-transparent rounded-xl overflow-hidden">
-      <div class="relative flex flex-col justify-center">
-        <div class="absolute inset-0"></div>
-        <div class="group relative m-0 flex w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:w-full">
-          <div class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
-            <img src="https://images.unsplash.com/photo-1506187334569-7596f62cf93f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3149&q=80" class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110" alt="" />
-          </div>
-          <div class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
-            <h1 class="font-serif text-2xl font-bold text-white shadow-xl">Azores</h1>
-            <h1 class="text-sm font-light text-gray-200 shadow-xl">A Little Paradise in Portugal</h1>
-          </div>
-        </div>
-      </div>
+    <div class="row-span-2 w-full max-h-min bg-zinc-800 rounded-xl overflow-hidden">
+      <ImageEvent 
+      imagesource="/img/luxspacehomeview.png"
+      imagetitle="Project 6"
+      imagedesc="This is Project 6"
+    />
     </div>
 
-    <div class="col-span-2 row-span-4 row-start-3 bg-transparent rounded-xl">
-      <div class="sm:first:col-span-2 py-14 px-11 rounded-lg max-w-lg" style="background-color: #FFE8D2;">
+    <div class="col-span-2 row-span-4 row-start-3 bg-transparent max-h-min rounded-xl">
+      <div class="h-full sm:first:col-span-2 py-14 px-11 rounded-lg max-w-lg" style="background-color: #FFE8D2;">
         <h3 class="mb-4 text-black text-[22px] sm:text-[40px] font-extrabold leading-none">
             <span>Inspiration </span>
         </h3>
@@ -211,7 +186,21 @@ export const frontmatter = {
         </ul>
     </div>
     </div>
-    <div class="row-span-2 col-start-3 row-start-3 bg-white rounded-xl">12</div>
-    <div class="row-span-2 col-start-3 row-start-5 bg-white rounded-xl">18</div>
+    
+    <div class="row-span-2 col-start-3 row-start-3 bg-zinc-800 rounded-xl">
+      <ImageEvent 
+      imagesource="/img/intechhomeview.png"
+      imagetitle="Project 7"
+      imagedesc="This is Project 7"
+    />
+    </div>
+
+    <div class="row-span-2 col-start-3 row-start-5 bg-transparent rounded-xl">
+      <ImageEvent 
+      imagesource="/img/KontenIG.png"
+      imagetitle="Project 8"
+      imagedesc="This is Project 8"
+    />
+    </div>
   </div>
 </section>

@@ -10,6 +10,7 @@ export default {
         grayNetral: "#736F70",
         goldenRod: "#F29727",
         whiteText: "#F2F2F2",
+        blueTailwind: "#06B6D4",
       },
       fontFamily: {
         lexendDeca: ["Lexend Deca", "sans-serif"],
@@ -17,6 +18,9 @@ export default {
       },
       rotate: {
         360: "360deg",
+      },
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
       },
     },
   },
