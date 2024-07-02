@@ -1,5 +1,4 @@
 import React from "react";
-import ElementsCard from "../components/ElementsCard";
 
 function NavbarEvent({ onSectionChange }) {
   return (
@@ -27,8 +26,6 @@ function NavbarEvent({ onSectionChange }) {
             About
           </button>
         </ul>
-
-        <ElementsCard />
       </nav>
     </>
   );
