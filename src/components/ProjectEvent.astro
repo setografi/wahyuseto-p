@@ -1,6 +1,7 @@
 ---
 import MusicPlayerEvent from "./MusicPlayerEvent";
 import ProgressEvent from "./ProgressEvent.astro";
+import ProjectList from "./ProjectList.astro";
 
 import { Image } from "astro:assets";
 import ProjectImage from "../assets/profileimage.jpg";
@@ -53,12 +54,8 @@ export const frontmatter = {
       />
     </div>
 
-    <div class="w-full max-h-min bg-transparent col-span-2 row-span-2 col-start-1 row-start-2 rounded-xl overflow-hidden">
-      <ImageEvent 
-        imagesource="/img/pondok_santai1.jpeg"
-        imagetitle="Project 1"
-        imagedesc="This is Project 1"
-      />
+    <div class="w-full max-h-min bg-zinc-800 text-whiteText col-span-2 row-span-2 col-start-1 row-start-2 rounded-xl overflow-hidden">
+        <ProjectList />
     </div>
 
       <div class="bg-transparent row-start-4 rounded-xl overflow-hidden">

@@ -11,6 +11,7 @@ export default {
         goldenRod: "#F29727",
         whiteText: "#F2F2F2",
         blueTailwind: "#06B6D4",
+        magentaC: "#F06292",
       },
       fontFamily: {
         lexendDeca: ["Lexend Deca", "sans-serif"],

@@ -2,84 +2,49 @@
 import { Image } from "astro:assets";
 import ProfileImage from "../assets/profileimage.jpg";
 import ProfileButton from "./ProfileButton";
-import TailiwindImage from "../assets/tailwindcss-color.svg";
+
 ---
 
 <section class="max-w-3xl w-full mx-auto grid gap-4 grid-cols-1" id="about">
     <div class="grid gap-5 gap-y-8 mt-8">
-      <div class="flex flex-col justify-center p-4 bg-zinc-800 border-zinc-800 shadow-md hover:shodow-lg rounded-2xl">
-        <div class=" text-gray-400 flex items-center ">
-          <Image class="w-6 mr-2" src={TailiwindImage} alt="taiwind css" />
-          <p> A free repository for community components at <a href="https://tailwindcomponents.com" class="underline hover:underline-none ml-1 text-redOrange" target="_blank">tailwindcomponets</a></p>
-          <button type="button" class="ml-auto text-xs  font-medium tracking-wider text-gray-400 hover:text-vividRed transition ease-in duration-300"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <div class="flex flex-col">
-        <div class="bg-zinc-800 border border-zinc-800 shadow-lg  rounded-2xl p-4">
+      <div class="flex flex-col p-6 border-b border-vividRed">
           <div class="flex-none sm:flex">
-            <div class=" relative h-32 w-32   sm:mb-0 mb-3">
+            <div class="relative h-32 w-32 sm:mb-0 mb-3">
               <Image class="w-32 h-32 object-cover rounded-2xl" src={ProfileImage} alt="wahyu seto pranata" />
-              <a href="#" class="absolute -right-2 bottom-2   -ml-3  text-white p-1 text-xs bg-redOrange hover:bg-vividRed font-medium tracking-wider rounded-full transition ease-in duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4">
-                  <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z">
-                  </path>
-                </svg>
-              </a>
             </div>
             <div class="flex-auto sm:ml-5 justify-evenly">
-              <div class="flex items-center justify-between sm:mt-2">
+              <div class="flex items-center justify-between">
                 <div class="flex items-center">
                   <div class="flex flex-col">
-                    <div class="w-full flex-none text-lg text-gray-200 font-bold leading-none">Wahyu Seto Pranata</div>
-                    <div class="flex-auto text-gray-400 my-1">
-                      <span class="mr-3 ">Designer + Developer</span><span class="mr-3 border-r border-gray-600  max-h-0"></span><span>Kepulauan Riau, IDN</span>
+                    <div class="w-full flex-none font-medium text-lg lg:text-xl text-gray-400 leading-none">Wahyu Seto Pranata</div>
+                    <div class="flex-auto font-medium text-2xl lg:text-3xl text-gray-400 my-1">
+                      <span class="mr-3 ">Designer</span><span class="mr-3 text-magentaC">|</span><span>Developer</span>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="flex flex-row items-center">
-                <div class="flex items-center">
-                  <i class="ri-star-fill h-5 w-5 text-goldenRod"></i>
-                  <i class="ri-star-fill h-5 w-5 text-goldenRod"></i>
-                  <i class="ri-star-fill h-5 w-5 text-goldenRod"></i>
-                  <i class="ri-star-fill h-5 w-5 text-goldenRod"></i>
-                  <i class="ri-star-line h-5 w-5 text-goldenRod"></i>
-                </div>
 
-                <div class="flex-1 inline-flex items-center ml-2 space-x-2">
-                  <a href="https://github.com/setografi" class="text-whiteText" target="_blank" aria-label="GitHub">
-                    <i class="ri-github-line cursor-pointer w-5 h-5 p-1 rounded-2xl hover:bg-mediumVermilion hover:text-white transition ease-in duration-300"></i>
-                  </a>
-
-                  <a href="https://www.linkedin.com/in/setografi" class="text-whiteText" target="_blank" aria-label="Linkedin">
-                    <i class="ri-linkedin-line cursor-pointer w-5 h-5 p-1 rounded-2xl hover:bg-mediumVermilion hover:text-white transition ease-in duration-300"></i>
-                  </a>
-
-                  <a href="https://www.instagram.com/setografi" class="text-whiteText" target="_blank" aria-label="Instagram">
-                    <i class="ri-instagram-line cursor-pointer w-5 h-5 p-1 rounded-2xl hover:bg-mediumVermilion hover:text-white transition ease-in duration-300"></i>
-                  </a>
-                </div>
-              </div>
-
-              <div class="flex pt-2 gap-2 text-sm text-gray-400">
-                <div class="flex-1 inline-flex items-center">
+              <div class="flex flex-row pt-2 gap-2 text-sm text-gray-400">
+                <div class="flex items-start">
                   <i class="ri-briefcase-line mr-2"></i>
                   <p class="">4 Years of Work</p>
                 </div>
-                <div class="flex-1 inline-flex items-center">
+                <div class="flex items-start ml-6">
                   <i class="ri-folder-6-line mr-2"></i>
                   <p class="">80 Completed Projects</p>
                 </div>
-
-                <ProfileButton />
               </div>
             </div>
           </div>
-        </div>
+
+          <div class="my-8">
+            <div class="text-gray-400 text-base">
+              Hello, I'm Seto, a unique creative designer and developer who spends much of his free time drinking coffee and traveling. 
+              I like learning new things and trying to apply them.
+            </div>
+          </div>
+
+          <ProfileButton />
       </div>
     </div>
 </section>

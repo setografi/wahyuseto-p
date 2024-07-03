@@ -1,4 +1,6 @@
 ---
+import FooterEvent from '../components/FooterEvent.astro';
+
 interface Props {
 	title: string;
 }
@@ -19,6 +21,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
+		<FooterEvent />
 	</body>
 </html>
 <style is:global>
