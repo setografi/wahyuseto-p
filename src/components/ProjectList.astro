@@ -1,10 +1,15 @@
 ---
+export interface Props{
+    titleproject:string,
+    descproject:string,
+    linkproject:string,
+}
+const {titleproject, descproject, linkproject} = Astro.props
 
 const cn = (...classes) => classes.filter(Boolean).join(' ');
 ---
 
-<div class="p-4">
-  <h2 class="font-medium text-xl mb-3">Projects</h2>
+<div class="py-1">
   <ul class="grid grid-cols-1 gap-3 p-1">
       <li
         class={cn(
@@ -20,13 +25,13 @@ const cn = (...classes) => classes.filter(Boolean).join(' ');
             <i class="ri-image-line text-2xl transition duration-300 group-hover:-translate-y-1 text-gray-400 group-hover:text-whiteText"></i>
           </div>
           <div>
-            <h3 class="transition duration-300 group-hover:translate-x-1 text-whiteText text-sm">astrolinkt</h3>
+            <h3 class="transition duration-300 group-hover:translate-x-1 text-whiteText text-sm">{titleproject}</h3>
             <div class="transition duration-300 group-hover:translate-x-px text-gray-400 group-hover:text-gray-200 text-xs">
-                Astro template
+                {descproject}
             </div>
           </div>
         </div>
-        <a href="/" class="group bg-zinc-800 hover:bg-neutral-800 border border-gray-400 hover:border-gray-200 px-2 py-1 rounded-xl" target="_blank" aria-label="Open">
+        <a href={linkproject} class="group bg-zinc-800 hover:bg-neutral-800 border border-gray-400 hover:border-gray-200 px-2 py-1 rounded-xl" target="_blank" aria-label="Open">
             <i class="ri-share-box-line transition text-gray-400 group-hover:text-magentaC group-focus-visible/icon:text-magentaC"></i>
         </a>
       </li>

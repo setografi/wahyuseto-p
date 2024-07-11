@@ -1,0 +1,36 @@
+---
+import ProjectList from "./ProjectList.astro"
+
+const projectItems = [
+  {
+    titleproject:"Project 1",
+    descproject:"Website Project 1 dibuat dengan React JS",
+    linkproject:"/"
+  },
+  {
+    titleproject:"Project 2",
+    descproject:"Website Project 2 dibuat dengan React JS",
+    linkproject:"/"
+  },
+  {
+    titleproject:"Project 3",
+    descproject:"Website Project 3 dibuat dengan React JS",
+    linkproject:"/"
+  },
+  {
+    titleproject:"Project 4",
+    descproject:"Website Project 4 dibuat dengan React JS",
+    linkproject:"/"
+  },
+  {
+    titleproject:"Project 5",
+    descproject:"Website Project 5 dibuat dengan React JS",
+    linkproject:"/"
+  },
+]
+---
+{projectItems.map(item=>{
+    return <ProjectList {...item}/>
+  })
+}
+

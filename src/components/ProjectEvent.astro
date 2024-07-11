@@ -1,11 +1,10 @@
 ---
 import MusicPlayerEvent from "./MusicPlayerEvent";
 import ProgressEvent from "./ProgressEvent.astro";
-import ProjectList from "./ProjectList.astro";
+import ProjectData from "./ProjectData.astro";
 
 import { Image } from "astro:assets";
 import ProjectImage from "../assets/profileimage.jpg";
-
 import LogoImage from "../assets/logo_6.png";
 import SpinImage from "../assets/spin-image.svg";
 
@@ -16,18 +15,18 @@ export const frontmatter = {
 };
 ---
 
-<section class="w-[28.75rem] md:w-[48rem] block mx-auto mt-5 mb-8" id="project">
+<section class="w-full md:w-[48rem] block mx-auto mt-5 mb-8" id="project">
   <div class="grid grid-cols-3 grid-rows-3 gap-5">
-    <div class="w-full max-h-min bg-transparent rounded-xl overflow-hidden">
+    <div class="w-full max-h-min bg-transparent rounded-xl overflow-hidden col-span-3 md:col-span-1">
       <MusicPlayerEvent />
     </div>
 
-    <div class="w-full max-h-min bg-transparent rounded-xl overflow-hidden">
+    <div class="w-full max-h-min bg-transparent rounded-xl overflow-hidden col-span-3 md:col-span-1">
       <ProgressEvent />
     </div>
 
-    <div class="relative bg-zinc-800 text-whiteText row-span-2 rounded-xl overflow-hidden">
-      <div class="relative flex flex-col items-center mt-20 z-10">
+    <div class="relative bg-zinc-800 text-whiteText row-span-2 rounded-xl overflow-hidden col-span-3 md:col-span-1">
+      <div class="relative flex flex-col items-center z-10 my-20">
         <div class="w-20 animate-bounce">
           <Image src={LogoImage} alt="project 1"/>
         </div>
@@ -41,12 +40,12 @@ export const frontmatter = {
         </a>
       </div>
       
-      <div class="absolute top-[22rem] left-[3rem] w-[18rem] rounded-full bg-gradient-to-tr from-whiteText to-grayNetral animate-spin-slow aspect-square overflow-hidden">
+      <div class="absolute top-[14rem] left-[16rem] md:w-[28rem] md:top-[22rem] md:left-[4rem] w-[18rem] rounded-full bg-gradient-to-tr from-whiteText to-grayNetral animate-spin-slow aspect-square overflow-hidden">
         <Image class="w-full h-full object-cover" src={SpinImage} alt="Animation Image" />
       </div>
     </div>
 
-    <div class="w-full max-h-min bg-transparent col-start-3 row-start-3 rounded-xl overflow-hidden">
+    <div class="w-full max-h-min bg-transparent md:col-start-3 md:row-start-3 rounded-xl overflow-hidden col-span-3 md:col-span-1">
       <ImageEvent 
         imagesource="/img/toketa_cake.png"
         imagetitle="Project 2"
@@ -54,11 +53,14 @@ export const frontmatter = {
       />
     </div>
 
-    <div class="w-full max-h-min bg-zinc-800 text-whiteText col-span-2 row-span-2 col-start-1 row-start-2 rounded-xl overflow-hidden">
-        <ProjectList />
+    <div class="w-full max-h-min bg-zinc-800 text-whiteText col-span-3 md:col-span-2 md:row-span-2 col-start-1 row-start-2 rounded-xl overflow-hidden">
+      <div class="p-4">
+        <h2 class="font-medium text-xl mb-3">Projects</h2>
+        <ProjectData/>
+    </div>
     </div>
 
-      <div class="bg-transparent row-start-4 rounded-xl overflow-hidden">
+      <div class="bg-transparent md:row-start-4 rounded-xl overflow-hidden col-span-3 md:col-span-1">
         <ImageEvent 
         imagesource="/img/setan_gurih.png"
         imagetitle="Project 3"
@@ -66,12 +68,12 @@ export const frontmatter = {
       />
       </div>
 
-      <div class="w-full max-h-min bg-transparent col-span-2 row-start-4 rounded-xl overflow-hidden">
+      <div class="w-full max-h-min bg-transparent md:col-span-2 md:row-start-4 rounded-xl overflow-hidden col-span-3">
         <div class="w-full h-full bg-zinc-800 flex justify-center items-center">
           <div class="w-full p-5 rounded-md tracking-wide shadow-lg">
-             <div id="header" class="flex"> 
+             <div id="header" class="flex flex-col md:flex-row"> 
                 <img alt="mountain" class="w-48 h-48 rounded-md border-2 border-gray-300" src="/img/sorehomeview.png" />
-                <div id="body" class="flex flex-col ml-5">
+                <div id="body" class="flex flex-col md:ml-5 mt-5 md:mt-0">
                    <h4 id="name" class="text-whiteText text-xl font-semibold mb-2">SORE Pixel Crafters</h4>
                    <p id="job" class="text-whiteText mt-2">SORE Pixel Crafters is a digital agency that specializes in UI/UX Design and Web Development.</p>
                    <div class="flex mt-5">
