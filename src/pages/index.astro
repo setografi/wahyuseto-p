@@ -2,24 +2,28 @@
 import Layout from '../layouts/Layout.astro';
 import HomeEvent from '../components/HomeEvent.astro';
 import ProjectEvent from '../components/ProjectEvent.astro';
-import SkillEvent from '../components/SkillEvent.astro';
+import BlogEvent from '../components/BlogEvent.astro';
 import AboutEvent from '../components/AboutEvent.astro';
-import AppLoad from './AppLoad';
+import AppLoad from '../components/AppLoad.jsx';
 import '../assets/css/style.css';
 ---
 
 <Layout title="Setografi">
 	<HomeEvent />
 	
-	<AppLoad client:load>
+	<AppLoad client:only="react">
 		<div slot="projectSlot">
 		  <ProjectEvent />
 		</div>
-		<div slot="skillSlot">
-		  <SkillEvent />
+		<div slot="blogSlot">
+			<BlogEvent />
 		</div>
 		<div slot="aboutSlot">
 			<AboutEvent />
 		</div>
 	</AppLoad>
 </Layout>
+
+<script>
+	console.log("Main script loaded");
+  </script>

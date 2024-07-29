@@ -60,3 +60,10 @@
   -webkit-box-shadow: -200px 0 0 200px var(--level-color);
   box-shadow: -200px 0 0 200px var(--level-color);
 }
+
+.block {
+  display: block !important;
+}
+.hidden {
+  display: none !important;
+}
