@@ -16,10 +16,10 @@ const AboutList = ({
   return (
     <section aria-labelledby={`${contenttitle}-heading`}>
       <div className="mx-auto">
-        <div className="max-w-lg p-4 text-gray-400">
+        <div className="max-w-lg p-4 text-whiteText">
           <div className="flex justify-start">
             <img
-              className="w-9 h-9 mr-4"
+              className="w-9 h-9 mr-4 p-1 bg-whiteText rounded-xl"
               src={contentimg}
               alt={contenttitle}
               loading="lazy"

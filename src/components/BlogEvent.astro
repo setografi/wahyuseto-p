@@ -1,16 +1,43 @@
 ---
+import { Image } from 'astro:assets';
+import ProfileImage from '../assets/profileimage.jpg';
+
 export const frontmatter = {
   title: 'Blogs',
 };
 ---
 
 <section class="w-full md:w-[48rem] mx-auto mt-5 mb-8"  id="skill">
-  <div class="p-4">
-    <h1 class="text-whiteText">Skills</h1>
-    <p class="text-whiteText">Here are some skills...</p>
+  <div class="mx-auto">
+    <div class="max-w-lg p-4 text-whiteText">
+      <div class="flex justify-start">
+        <Image class="w-9 h-9 mr-4 p-1 bg-whiteText rounded-xl" src={ProfileImage} alt="Wahyu Seto Pranata" loading='lazy'/>
+        <div>
+          <div class="flex flex-row">
+            <h2 class="font-bold">
+              Wahyu Seto Pranata
+            </h2>
+            <span class="font-normal ml-2">. 1d ago</span>
+          </div>
+          <p class="font-normal mt-2">I've been writing several blog posts lately on my personal blog. You can visit it if you're interested!</p>
+        </div>
+      </div>
+
+      <div class="ml-12 mt-2">
+        <button
+          class="text-xl mr-4 hover:text-vividRed"
+        >
+            <i class="ri-heart-3-line ri-1x"></i>
+        </button>
+        <a
+          class="text-xl hover:text-vividRed"
+          href="https://setojourney.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="ri-share-forward-line ri-1x"></i>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
-
-<script>
-  console.log("BlogEvent mounted");
-</script>
