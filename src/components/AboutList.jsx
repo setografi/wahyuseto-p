@@ -11,9 +11,7 @@ const AboutList = ({
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLike = () => {
-    console.log("Like button clicked"); // Debug log
     setIsLiked(!isLiked);
-    console.log(`Liked status for ${contenttitle}: ${!isLiked}`); // Debugging line
   };
 
   return (
