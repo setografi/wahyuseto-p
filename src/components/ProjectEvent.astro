@@ -27,27 +27,25 @@ export const frontmatter = {
 
     <div class="relative bg-zinc-800 text-whiteText row-span-2 rounded-xl overflow-hidden col-span-3 md:col-span-1">
       <div class="relative flex flex-col items-center z-10 my-20">
-        <div class="w-20 animate-bounce">
-          <Image src={LogoImage} alt="project 1"/>
-        </div>
-
+        <Image src={LogoImage} width={2245} height={2245} alt="project 1" loading="eager" class="w-20 animate-bounce"/>
+       
         <h2 class="p-4 text-xl font-medium text-center">
           This page isn't ready yet
         </h2>
         
-        <a class="bg-blueTailwind text-whiteText rounded-xl py-3 px-5 font-medium text-sm cursor-pointer duration-300 hover:bg-grayNetral hover:text-gray-400">
+        <button class="bg-blueTailwind text-whiteText rounded-xl py-3 px-5 font-medium text-sm cursor-pointer duration-300 transition hover:bg-grayNetral hover:text-gray-400">
           Okay
-        </a>
+        </button>
       </div>
       
       <div class="absolute top-[14rem] left-[16rem] md:w-[28rem] md:top-[22rem] md:left-[4rem] w-[18rem] rounded-full bg-gradient-to-tr from-whiteText to-grayNetral animate-spin-slow aspect-square overflow-hidden">
-        <Image class="w-full h-full object-cover" src={SpinImage} alt="Animation Image" />
+        <Image class="w-full h-full object-cover" src={SpinImage} alt="Animation Spin" loading="eager"/>
       </div>
     </div>
 
     <div class="w-full max-h-min bg-transparent md:col-start-3 md:row-start-3 rounded-xl overflow-hidden col-span-3 md:col-span-1">
       <ImageEvent 
-        imagesource="/img/SerenityLogo.png"
+        imagesource="/img/SerenityLogo2.jpeg"
         imagetitle="Serenity Logo Desgin"
         imagedesc="Serenity is a mobile app for exploring interesting places in Jakarta."
       />
@@ -71,13 +69,13 @@ export const frontmatter = {
       <div class="w-full max-h-min bg-transparent md:col-span-2 md:row-start-4 rounded-xl overflow-hidden col-span-3">
         <div class="w-full h-full bg-zinc-800 flex justify-center items-center">
           <div class="w-full p-5 rounded-md tracking-wide shadow-lg">
-             <div id="header" class="flex flex-col md:flex-row"> 
-                <img alt="mountain" class="w-48 h-48 rounded-md border-2 border-gray-300" src="/img/sorehomeview.png" />
+             <div id="header" class="flex flex-col md:flex-row">
+              <Image src={"/img/sorehomeview.png"} width={1366} height={768} alt="SORE Pixel Crafters" class="w-48 h-48 rounded-md border-2 border-gray-300 object-cover object-center aspect-square"/> 
                 <div id="body" class="flex flex-col md:ml-5 mt-5 md:mt-0">
                    <h4 id="name" class="text-whiteText text-lg font-bold mb-2">SORE Pixel Crafters</h4>
                    <p id="job" class="text-whiteText text-sm font-light">SORE Pixel Crafters is a digital agency that specializes in UI/UX Design and Web Development.</p>
                    <div class="flex mt-5">
-                      <Image alt="avatar" class="w-6 rounded-full" src={ProjectImage} />
+                      <Image src={ProjectImage} width={2245} height={2245} alt="Organizations" class="w-6 h-6 rounded-full object-cover" loading="lazy"/>
                       <p class="text-whiteText text-lg font-bold ml-3">Wahyu Seto Pranata</p>
                    </div>
                 </div>

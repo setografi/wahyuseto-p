@@ -6,56 +6,60 @@ const AboutList = ({
   content,
   contentimg,
   sociallink,
+  loading,
 }) => {
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLike = () => {
-    setIsLiked((prevState) => !prevState);
+    console.log("Like button clicked"); // Debug log
+    setIsLiked(!isLiked);
+    console.log(`Liked status for ${contenttitle}: ${!isLiked}`); // Debugging line
   };
 
   return (
     <section aria-labelledby={`${contenttitle}-heading`}>
       <div className="mx-auto">
-        <div className="max-w-lg p-4 text-whiteText">
+        <div className="max-w-lg p-4 text-white">
           <div className="flex justify-start">
             <img
-              className="w-9 h-9 mr-4 p-1 bg-whiteText rounded-xl"
+              className="w-9 h-9 mr-4 p-1 bg-white rounded-xl"
               src={contentimg}
               alt={contenttitle}
-              loading="lazy"
+              loading={loading}
             />
-            <div>
-              <div className="flex flex-row">
+            <div className="flex flex-col gap-2">
+              <div className="flex flex-row justify-start items-start">
                 <h2 id={`${contenttitle}-heading`} className="font-bold">
                   {contenttitle}
                 </h2>
                 <span className="font-normal ml-2">{subtitle}</span>
               </div>
-              <p className="font-normal mt-2">{content}</p>
-            </div>
-          </div>
 
-          <div className="ml-12 mt-2">
-            <button
-              className="text-xl mr-4 hover:text-vividRed"
-              onClick={handleLike}
-              aria-label={isLiked ? "Unlike" : "Like"}
-            >
-              {isLiked ? (
-                <i className="ri-heart-3-fill ri-1x text-vividRed"></i>
-              ) : (
-                <i className="ri-heart-3-line ri-1x"></i>
-              )}
-            </button>
-            <a
-              className="text-xl hover:text-vividRed"
-              href={sociallink}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Visit ${contenttitle}`}
-            >
-              <i className="ri-share-forward-line ri-1x"></i>
-            </a>
+              <p className="font-normal">{content}</p>
+
+              <div className="flex justify-start items-start gap-4">
+                <button
+                  className="text-xl hover:text-red-500"
+                  onClick={handleLike}
+                  aria-label={isLiked ? "Unlike" : "Like"}
+                >
+                  {isLiked ? (
+                    <i className="ri-heart-3-fill text-red-500"></i>
+                  ) : (
+                    <i className="ri-heart-3-line"></i>
+                  )}
+                </button>
+                <a
+                  className="text-xl hover:text-red-500"
+                  href={sociallink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${contenttitle}`}
+                >
+                  <i className="ri-send-plane-line"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

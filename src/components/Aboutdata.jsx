@@ -1,52 +1,53 @@
 import React from "react";
-import AboutMe from "./AboutMe";
-import Instagramphoto from "../assets/about/instagram-color.svg";
-import Twitterphoto from "../assets/about/x-color.svg";
-import Linkedinphoto from "../assets/about/linkedin-color.svg";
-import Readcvphoto from "../assets/about/readdotcv-color.svg";
+import AboutList from "./AboutList";
 
-export default function AboutMeData() {
+const aboutItems = [
+  {
+    contenttitle: "Instagram",
+    subtitle: ". Just now",
+    content:
+      "My other skills? you can visit my Instagram. You can see Instagram Typography content and some of my Photography Collections.",
+    contentimg: "./skill-img/instagram-color.svg",
+    sociallink: "https://www.instagram.com/setografi",
+  },
+  {
+    contenttitle: "Twitter",
+    subtitle: ". 1m ago",
+    content:
+      "You can see me here sharing design thoughts and sometimes I tell you about my daily activities and hobbies.",
+    contentimg: "./skill-img/x-color.svg",
+    sociallink: "https://twitter.com/sicalondktr",
+  },
+  {
+    contenttitle: "LinkedIn",
+    subtitle: ". 3d ago",
+    content: "See my experience and qualifications.",
+    contentimg: "./skill-img/linkedin-color.svg",
+    sociallink: "https://www.linkedin.com/in/wahyu-seto-pranata-553719262",
+  },
+  {
+    contenttitle: "read.cv",
+    subtitle: ". 1y ago",
+    content: "Find me and take me.",
+    contentimg: "./skill-img/readdotcv-color.svg",
+    sociallink: "https://read.cv/setografi",
+  },
+];
+
+export default function AboutData() {
   return (
-    <>
-      <div>
-        <AboutMe
-          title={"Instagram"}
-          subtitle={". Just now"}
-          content={
-            "My other skills? you can visit my Instagram. You can see Instagram Typography content and some of my Photography Collections."
-          }
-          image={Instagramphoto}
-          sociallink={"https://www.instagram.com/setografi"}
+    <div>
+      {aboutItems.map((item, index) => (
+        <AboutList
+          key={index}
+          contenttitle={item.contenttitle}
+          subtitle={item.subtitle}
+          content={item.content}
+          contentimg={item.contentimg}
+          sociallink={item.sociallink}
+          loading={index === 0 ? "eager" : "lazy"}
         />
-
-        <AboutMe
-          title={"Twitter"}
-          subtitle={". 1m ago"}
-          content={
-            "You can see me here sharing design thoughts and sometimes I tell you about my daily activities and hobbies."
-          }
-          image={Twitterphoto}
-          sociallink={"https://twitter.com/sicalondktr"}
-        />
-
-        <AboutMe
-          title={"LinkedIn"}
-          subtitle={". 3d ago"}
-          content={"See my experience and qualifications."}
-          image={Linkedinphoto}
-          sociallink={
-            "https://www.linkedin.com/in/wahyu-seto-pranata-553719262"
-          }
-        />
-
-        <AboutMe
-          title={"read.cv"}
-          subtitle={". 1y ago"}
-          content={"Find me and take me."}
-          image={Readcvphoto}
-          sociallink={"https://read.cv/setografi"}
-        />
-      </div>
-    </>
+      ))}
+    </div>
   );
 }
