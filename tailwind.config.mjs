@@ -4,13 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        mediumVermilion: "#D94E41",
-        redOrange: "#F22F1D",
-        vividRed: "#F21905",
         grayNetral: "#736F70",
-        goldenRod: "#F29727",
         whiteText: "#F2F2F2",
-        blueTailwind: "#06B6D4",
+        blueButton: "#06B6D4",
         magentaC: "#F06292",
       },
       fontFamily: {

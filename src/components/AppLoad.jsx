@@ -1,6 +1,6 @@
 //Metode 1
 import { useState } from "react";
-import NavbarEvent from "./NavbarEvent";
+import NavbarEvent from "./layout/NavbarEvent";
 
 function AppLoad({ projectSlot, blogSlot, aboutSlot }) {
   const [currentSection, setCurrentSection] = useState("project");

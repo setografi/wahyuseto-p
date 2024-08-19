@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
-import ProfileImage from '../assets/profileimage.jpg';
+import ProfileImage from '../assets/images/profileimage.jpg';
+import Blog01 from '../assets/images/seto-journey.png';
 
 export const frontmatter = {
   title: 'Blogs',
@@ -8,9 +9,7 @@ export const frontmatter = {
 ---
 
 <section class="w-full md:w-[48rem] mx-auto mt-5 mb-8"  id="skill">
-  <div class="mx-auto">
-    <div class="max-w-lg p-4 text-white">
-      <div class="flex justify-start">
+      <div class="max-w-lg flex justify-start text-white p-4">
         <Image src={ProfileImage} width={2730} height={2730} alt='Wahyu Seto Pranata' loading='eager' class='w-9 h-9 mr-4 p-1 bg-white rounded-xl object-cover'/>
         <div class="flex flex-col gap-2">
           <div class="flex flex-row justify-start items-start">
@@ -21,6 +20,10 @@ export const frontmatter = {
           </div>
 
           <p class="font-normal">I've been writing several blog posts lately on my personal blog. You can visit it if you're interested!</p>
+
+          <div class="rounded-xl overflow-hidden my-2">
+            <Image src={Blog01} width={1366} height={715} alt='Blog 01' loading='eager' class='w-full h-64 object-cover' />
+          </div>
 
           <div class="flex justify-start items-start gap-4">
             <button class="text-xl hover:text-red-500">
@@ -39,6 +42,4 @@ export const frontmatter = {
           </div>
         </div>
       </div>
-    </div>
-  </div>
 </section>

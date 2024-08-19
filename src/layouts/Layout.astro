@@ -1,5 +1,6 @@
 ---
-import FooterEvent from '../components/FooterEvent.astro';
+import FooterEvent from '../components/layout/FooterEvent.astro';
+import '../assets/style/global.css';
 
 interface Props {
 	title: string;
@@ -14,31 +15,19 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/img/logo_6.png" />
 		<link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="mx-auto flex min-h-screen max-w-3xl flex-col">
 		<slot />
 		<FooterEvent />
 	</body>
 </html>
 <style is:global>
 	html {
-		font-family: system-ui, sans-serif;
+		font-family: "Lexend Deca", sans-serif;
 		background: hsl(240deg 5.88% 10%);
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
 	}
 </style>
