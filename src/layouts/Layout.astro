@@ -1,33 +1,36 @@
 ---
 import FooterEvent from '../components/layout/FooterEvent.astro';
 import '../assets/style/global.css';
+import 'remixicon/fonts/remixicon.css';
 
 interface Props {
-	title: string;
+  title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/img/logo_6.png" />
-		<link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="mx-auto flex min-h-screen max-w-3xl flex-col">
-		<slot />
-		<FooterEvent />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/img/logo_6.png" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" /> -->
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body class="mx-auto flex min-h-screen max-w-3xl flex-col">
+    <slot />
+    <FooterEvent />
+  </body>
 </html>
 <style is:global>
-	html {
-		font-family: "Lexend Deca", sans-serif;
-		background: hsl(240deg 5.88% 10%);
-	}
+  html {
+    font-family: 'Lexend Deca', sans-serif;
+    background: hsl(240deg 5.88% 10%);
+  }
 </style>

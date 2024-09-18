@@ -1,17 +1,16 @@
-//Metode 1
-import { useState } from "react";
-import NavbarEvent from "./layout/NavbarEvent";
+import { useState } from 'react';
+import NavbarEvent from './layout/NavbarEvent';
 
 function AppLoad({ projectSlot, blogSlot, aboutSlot }) {
-  const [currentSection, setCurrentSection] = useState("project");
+  const [currentSection, setCurrentSection] = useState('project');
 
   const renderSection = () => {
     switch (currentSection) {
-      case "project":
+      case 'project':
         return projectSlot;
-      case "blog":
+      case 'blog':
         return blogSlot;
-      case "about":
+      case 'about':
         return aboutSlot;
       default:
         return projectSlot;

@@ -1,13 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-const AboutList = ({
-  contenttitle,
-  subtitle,
-  content,
-  contentimg,
-  sociallink,
-  loading,
-}) => {
+const AboutList = ({ contenttitle, subtitle, content, contentimg, sociallink, loading }) => {
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLike = () => {
@@ -20,26 +13,26 @@ const AboutList = ({
         <div className="max-w-lg p-4 text-white">
           <div className="flex justify-start">
             <img
-              className="w-9 h-9 mr-4 p-1 bg-white rounded-xl"
+              className="mr-4 h-9 w-9 rounded-xl bg-white p-1"
               src={contentimg}
               alt={contenttitle}
               loading={loading}
             />
             <div className="flex flex-col gap-2">
-              <div className="flex flex-row justify-start items-start">
+              <div className="flex flex-row items-start justify-start">
                 <h2 id={`${contenttitle}-heading`} className="font-bold">
                   {contenttitle}
                 </h2>
-                <span className="font-normal ml-2">{subtitle}</span>
+                <span className="ml-2 font-normal">{subtitle}</span>
               </div>
 
               <p className="font-normal">{content}</p>
 
-              <div className="flex justify-start items-start gap-4">
+              <div className="flex items-start justify-start gap-4">
                 <button
                   className="text-xl hover:text-red-500"
                   onClick={handleLike}
-                  aria-label={isLiked ? "Unlike" : "Like"}
+                  aria-label={isLiked ? 'Unlike' : 'Like'}
                 >
                   {isLiked ? (
                     <i className="ri-heart-3-fill text-red-500"></i>

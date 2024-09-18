@@ -1,48 +1,63 @@
 ---
-import { Image } from "astro:assets";
-import ProfileImage from "../assets/images/profileimage.jpg";
-import ProfileButton from "./shared/ProfileButton.jsx";
-
+import { Image } from 'astro:assets';
+import ProfileImage from '../assets/images/profileimage.jpg';
+import ProfileButton from './shared/ProfileButton.jsx';
 ---
 
-<section class="max-w-3xl w-full grid grid-cols-1 justify-center items-center mt-6 md:mt-8 p-4" id="about">
-      <div class="flex flex-col border-b border-magentaC">
-          <div class="flex-none sm:flex">
-            <div class="relative h-32 w-32 sm:mb-0 mb-3">
-              <Image class="w-32 h-32 object-cover rounded-2xl" width={2730} height={2730} src={ProfileImage} alt="Wahyu Seto Pranata" loading="eager" />
-            </div>
-            <div class="flex-auto sm:ml-5 justify-evenly">
-              <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                  <div class="flex flex-col">
-                    <div class="w-full flex-none font-medium text-lg lg:text-xl text-whiteText leading-none">Wahyu Seto Pranata</div>
-                    <div class="flex-auto font-medium text-2xl lg:text-3xl text-whiteText my-1">
-                      <span class="mr-3 ">Designer</span><span class="mr-3 text-magentaC">|</span><span>Developer</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex flex-col md:flex-row pt-2 gap-2 text-sm text-whiteText">
-                <div class="flex items-start">
-                  <i class="ri-briefcase-line mr-2"></i>
-                  <p class="">4 Years of Work</p>
-                </div>
-                <div class="flex items-start md:ml-6">
-                  <i class="ri-folder-6-line mr-2"></i>
-                  <p class="">80 Completed Projects</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="my-8">
-            <div class="text-whiteText text-base">
-              Hello, I'm Seto, a unique creative designer and developer who spends much of his free time drinking coffee and traveling. 
-              I like learning new things and trying to apply them.
-            </div>
-          </div>
-
-          <ProfileButton />
+<section
+  class="mt-6 grid w-full max-w-3xl grid-cols-1 items-center justify-center p-4 md:mt-8"
+  id="about"
+>
+  <div class="flex flex-col border-b border-magentaC">
+    <div class="flex-none sm:flex">
+      <div class="relative mb-3 h-32 w-32 sm:mb-0">
+        <Image
+          class="h-32 w-32 rounded-2xl object-cover"
+          width={2730}
+          height={2730}
+          src={ProfileImage}
+          alt="Wahyu Seto Pranata"
+          loading="eager"
+        />
       </div>
+      <div class="flex-auto justify-evenly sm:ml-5">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <div class="flex flex-col">
+              <div
+                class="w-full flex-none text-lg font-medium leading-none text-whiteText lg:text-xl"
+              >
+                Wahyu Seto Pranata
+              </div>
+              <div class="my-1 flex-auto text-2xl tracking-widest text-whiteText lg:text-3xl">
+                <span class="mr-3 font-offBit">Designer</span><span class="mr-3 text-magentaC"
+                  >|</span
+                ><span class="font-offBitdotbold">Developer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2 pt-2 text-sm text-whiteText md:flex-row">
+          <div class="flex items-start justify-center">
+            <i class="ri-briefcase-line mr-2"></i>
+            <p class="font-offBit tracking-widest">4 Years of Work</p>
+          </div>
+          <div class="flex items-start justify-center md:ml-6">
+            <i class="ri-folder-6-line mr-2"></i>
+            <p class="font-offBit tracking-widest">80 Completed Projects</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-8">
+      <div class="text-base text-whiteText">
+        Hello, I'm Seto, a unique creative designer and developer who spends much of his free time
+        drinking coffee and traveling. I like learning new things and trying to apply them.
+      </div>
+    </div>
+
+    <ProfileButton />
+  </div>
 </section>

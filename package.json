@@ -12,15 +12,18 @@
   "dependencies": {
     "@astrojs/react": "^3.6.2",
     "@astrojs/tailwind": "^5.1.0",
-    "@react-three/drei": "^9.111.2",
-    "@react-three/fiber": "^8.17.5",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
-    "astro": "^4.14.2",
+    "astro": "^4.15.2",
     "axios": "^1.7.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tailwindcss": "^3.4.3",
-    "three": "^0.167.1"
+    "remixicon": "^4.3.0",
+    "tailwindcss": "^3.4.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.6"
   }
 }

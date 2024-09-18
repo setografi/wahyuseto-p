@@ -8,38 +8,53 @@ export const frontmatter = {
 };
 ---
 
-<section class="w-full md:w-[48rem] mx-auto mt-5 mb-8"  id="skill">
-      <div class="max-w-lg flex justify-start text-white p-4">
-        <Image src={ProfileImage} width={2730} height={2730} alt='Wahyu Seto Pranata' loading='eager' class='w-9 h-9 mr-4 p-1 bg-white rounded-xl object-cover'/>
-        <div class="flex flex-col gap-2">
-          <div class="flex flex-row justify-start items-start">
-            <h2 class="font-bold">
-              Wahyu Seto Pranata
-            </h2>
-            <span class="font-normal ml-2">. 1d ago</span>
-          </div>
-
-          <p class="font-normal">I've been writing several blog posts lately on my personal blog. You can visit it if you're interested!</p>
-
-          <div class="rounded-xl overflow-hidden my-2">
-            <Image src={Blog01} width={1366} height={715} alt='Blog 01' loading='eager' class='w-full h-64 object-cover' />
-          </div>
-
-          <div class="flex justify-start items-start gap-4">
-            <button class="text-xl hover:text-red-500">
-                <i class="ri-heart-3-line"></i>
-            </button>
-
-            <a
-              class= "text-xl hover:text-red-500"
-              href= "https://setojourney.vercel.app/"
-              target= "_blank"
-              rel= "noopener noreferrer"
-              aria-label="Visit Seto Journey Website"
-            >
-              <i class="ri-send-plane-line"></i>
-            </a>
-          </div>
-        </div>
+<section class="mx-auto mb-8 mt-5 w-full md:w-[48rem]">
+  <div class="flex max-w-lg justify-start p-4 text-white">
+    <Image
+      src={ProfileImage}
+      width={2730}
+      height={2730}
+      alt="Wahyu Seto Pranata"
+      loading="eager"
+      class="mr-4 h-9 w-9 rounded-xl bg-white object-cover p-1"
+    />
+    <div class="flex flex-col gap-2">
+      <div class="flex flex-row items-start justify-start">
+        <h2 class="font-bold">Wahyu Seto Pranata</h2>
+        <span class="ml-2 font-normal">. 1d ago</span>
       </div>
+
+      <p class="font-normal">
+        I've been writing several blog posts lately on my personal blog. You can visit it if you're
+        interested!
+      </p>
+
+      <div class="my-2 overflow-hidden rounded-xl">
+        <Image
+          src={Blog01}
+          width={1366}
+          height={715}
+          alt="Blog 01"
+          loading="eager"
+          class="h-64 w-full object-cover"
+        />
+      </div>
+
+      <div class="flex items-start justify-start gap-4">
+        <button class="text-xl hover:text-red-500">
+          <i class="ri-heart-3-line"></i>
+        </button>
+
+        <a
+          class="text-xl hover:text-red-500"
+          href="https://setojourney.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Seto Journey Website"
+        >
+          <i class="ri-send-plane-line"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 </section>

@@ -4,13 +4,13 @@ import HomeEvent from '../components/HomeEvent.astro';
 import ProjectEvent from '../components/ProjectEvent.astro';
 import BlogEvent from '../components/BlogEvent.astro';
 import AboutEvent from '../components/AboutEvent.astro';
-import AppLoad from '../components/AppLoad.jsx';
+import Navbar from '../components/layout/Navbar.astro';
 ---
 
-<Layout title="Setografi">
-	<HomeEvent />
-	
-	<AppLoad client:only="react">
+<Layout title="Setografi" description="setografi portfolio">
+  <HomeEvent />
+
+  <!-- <AppLoad client:only="react">
 		<div slot="projectSlot">
 		  <ProjectEvent />
 		</div>
@@ -20,5 +20,16 @@ import AppLoad from '../components/AppLoad.jsx';
 		<div slot="aboutSlot">
 			<AboutEvent />
 		</div>
-	</AppLoad>
+	</AppLoad> -->
+  <Navbar />
+
+  <div id="project-section">
+    <ProjectEvent />
+  </div>
+  <div id="blog-section">
+    <BlogEvent />
+  </div>
+  <div id="about-section">
+    <AboutEvent />
+  </div>
 </Layout>

@@ -1,0 +1,60 @@
+---
+
+---
+
+<nav class="my-5 flex w-full max-w-lg items-center justify-center px-4">
+  <ul class="flex w-full justify-between gap-x-2 rounded-xl bg-zinc-800 p-2">
+    <button
+      class="w-full cursor-pointer rounded-lg bg-transparent px-3 py-2 font-offBit text-sm tracking-widest text-whiteText transition-all duration-300 hover:transform-gpu hover:bg-whiteText hover:text-zinc-800 md:text-base"
+      data-section="project"
+    >
+      Projects
+    </button>
+
+    <button
+      class="w-full cursor-pointer rounded-lg bg-transparent px-3 py-2 font-offBit text-sm tracking-widest text-whiteText transition-all duration-300 hover:transform-gpu hover:bg-whiteText hover:text-zinc-800 md:text-base"
+      data-section="blog"
+    >
+      Blogs
+    </button>
+
+    <button
+      class="w-full cursor-pointer rounded-lg bg-transparent px-3 py-2 font-offBit text-sm tracking-widest text-whiteText transition-all duration-300 hover:transform-gpu hover:bg-whiteText hover:text-zinc-800 md:text-base"
+      data-section="about"
+    >
+      About
+    </button>
+  </ul>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('button[data-section]');
+    const sections = {
+      project: document.getElementById('project-section'),
+      blog: document.getElementById('blog-section'),
+      about: document.getElementById('about-section'),
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const section = button.getAttribute('data-section');
+        Object.keys(sections).forEach((key) => {
+          if (key === section) {
+            sections[key].style.display = 'block';
+          } else {
+            sections[key].style.display = 'none';
+          }
+        });
+      });
+    });
+
+    Object.keys(sections).forEach((key) => {
+      if (key === 'project') {
+        sections[key].style.display = 'block';
+      } else {
+        sections[key].style.display = 'none';
+      }
+    });
+  });
+</script>
