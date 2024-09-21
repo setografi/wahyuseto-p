@@ -61,11 +61,17 @@ export const frontmatter = {
     </div>
 
     <div
-      class="relative col-start-1 h-full w-full overflow-hidden rounded-xl border-2 border-zinc-800 text-whiteText md:col-span-2 md:row-span-2 md:row-start-2"
+      class="col-start-1 h-full w-full overflow-hidden text-whiteText md:col-span-2 md:row-span-2 md:row-start-2"
     >
-      <div class="inset-0 left-0 top-0 h-full w-full p-4 md:absolute">
-        <h2 class="mb-3 text-xl font-medium">Projects</h2>
-        <ProjectData />
+      <div class="flex h-full flex-col gap-1">
+        <div class="flex-1 rounded-xl border-2 border-zinc-800 p-4">
+          <h2 class="mb-3 text-xl font-medium">Projects</h2>
+          <ProjectData />
+        </div>
+
+        <div class="h-full w-full rounded-xl bg-zinc-800 p-4">
+          <h2 class="text-xl font-medium">Brief experience</h2>
+        </div>
       </div>
     </div>
 

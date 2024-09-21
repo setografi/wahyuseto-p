@@ -43,18 +43,89 @@ const projectItems = [
 ];
 ---
 
-<div class="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth">
-  {
-    projectItems.map((item) => {
-      return (
-        <div class="w-full flex-shrink-0 snap-center p-1">
-          <ProjectList
-            titleproject={item.titleproject}
-            descproject={item.descproject}
-            linkproject={item.linkproject}
-          />
-        </div>
-      );
-    })
-  }
+<div id="carouselContainer" class="w-full overflow-hidden">
+  <div id="carouselItems" class="flex w-full transition-transform duration-500">
+    {
+      projectItems.map((item) => {
+        return (
+          <div class="card w-full flex-shrink-0 p-1 md:max-w-fit">
+            <ProjectList
+              titleproject={item.titleproject}
+              descproject={item.descproject}
+              linkproject={item.linkproject}
+            />
+          </div>
+        );
+      })
+    }
+  </div>
+
+  <div class="flex justify-between">
+    <button
+      id="prevBtn"
+      class="transform cursor-pointer rounded-xl bg-magentaC px-2 py-1 text-whiteText transition duration-300 hover:bg-grayNetral hover:text-gray-400 sm:px-3 md:px-4"
+    >
+      <i class="ri-arrow-left-s-line"></i>
+    </button>
+    <button
+      id="nextBtn"
+      class="transform cursor-pointer rounded-xl bg-magentaC px-2 py-1 text-whiteText transition duration-300 hover:bg-grayNetral hover:text-gray-400 sm:px-3 md:px-4"
+    >
+      <i class="ri-arrow-right-s-line"></i>
+    </button>
+  </div>
 </div>
+
+<script>
+  const cards = document.querySelectorAll('.card') as NodeListOf<HTMLElement>;
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const carouselItems = document.getElementById('carouselItems');
+  let currentIndex = 0;
+  let interval;
+
+  function showCard(index) {
+    // Hitung lebar setiap kartu (card) berdasarkan lebarnya
+    const cardWidth = cards[0].offsetWidth; // Gunakan optional chaining untuk keamanan
+    carouselItems.style.transform = `translateX(-${index * cardWidth}px)`;
+  }
+
+  function showNextCard() {
+    if (currentIndex < cards.length - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0; // Reset ke awal untuk infinite scroll
+    }
+    showCard(currentIndex);
+  }
+
+  function showPrevCard() {
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = cards.length - 1; // Kembali ke item terakhir
+    }
+    showCard(currentIndex);
+  }
+
+  prevBtn.addEventListener('click', () => {
+    clearInterval(interval); // Hentikan otomatisasi ketika tombol diklik
+    showPrevCard();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    clearInterval(interval); // Hentikan otomatisasi ketika tombol diklik
+    showNextCard();
+  });
+
+  // Fungsi untuk menggeser kartu secara otomatis setiap 3 detik
+  function autoSlide() {
+    interval = setInterval(() => {
+      showNextCard();
+    }, 3000); // Ganti kartu setiap 3 detik (3000 milidetik)
+  }
+
+  window.onload = () => {
+    autoSlide(); // Mulai otomatisasi saat halaman dimuat
+  };
+</script>

@@ -9,8 +9,8 @@ import ProfileButton from './shared/ProfileButton.jsx';
   id="about"
 >
   <div class="flex flex-col border-b border-magentaC">
-    <div class="flex-none sm:flex">
-      <div class="relative mb-3 h-32 w-32 sm:mb-0">
+    <div class="flex flex-col">
+      <div class="relative mb-4 h-32 w-32">
         <Image
           class="h-32 w-32 rounded-2xl object-cover"
           width={2730}
@@ -20,42 +20,40 @@ import ProfileButton from './shared/ProfileButton.jsx';
           loading="eager"
         />
       </div>
-      <div class="flex-auto justify-evenly sm:ml-5">
+      <div class="flex-auto justify-evenly">
         <div class="flex items-center justify-between">
           <div class="flex items-center">
             <div class="flex flex-col">
-              <div
-                class="w-full flex-none text-lg font-medium leading-none text-whiteText lg:text-xl"
-              >
+              <div class="w-full text-lg font-medium leading-none text-whiteText">
                 Wahyu Seto Pranata
               </div>
               <div class="my-1 flex-auto text-2xl tracking-widest text-whiteText lg:text-3xl">
-                <!-- <span class="mr-3 font-offBit">Designer</span><span class="mr-3 text-magentaC"
+                <span class="mr-3 font-offBit">Designer</span><span class="mr-3 text-magentaC"
                   >|</span
-                > -->
-                <span class="font-offBitdotbold text-magentaC">Game Developer</span>
+                >
+                <span class="font-offBitdotbold">Developer</span>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div class="flex flex-col gap-2 pt-2 text-sm text-whiteText md:flex-row">
-          <div class="flex items-start justify-start md:justify-center">
-            <i class="ri-briefcase-line mr-2"></i>
-            <p class="font-offBit tracking-widest">4 Years of Work</p>
-          </div>
-          <div class="flex items-start justify-start md:ml-6 md:justify-center">
-            <i class="ri-folder-6-line mr-2"></i>
-            <p class="font-offBit tracking-widest">80 Completed Projects</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="my-8">
-      <div class="text-base text-whiteText">
+    <div class="my-8 md:mt-14">
+      <div class="text-base text-whiteText md:max-w-md">
         Hello, I'm Seto, a unique creative designer and developer who spends much of his free time
         drinking coffee and traveling. I like learning new things and trying to apply them.
+      </div>
+
+      <div class="mt-4 flex flex-col items-start justify-start gap-2 text-sm text-whiteText">
+        <div class="inline-flex">
+          <i class="ri-briefcase-line mr-2"></i>
+          <p class="font-offBit tracking-widest">4 Years of Work</p>
+        </div>
+        <div class="inline-flex">
+          <i class="ri-folder-6-line mr-2"></i>
+          <p class="font-offBit tracking-widest">80 Completed Projects</p>
+        </div>
       </div>
     </div>
 
