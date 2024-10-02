@@ -3,19 +3,25 @@ import MusicPlayerEvent from './shared/MusicPlayerEvent.jsx';
 import ProgressEvent from './shared/ProgressEvent.astro';
 import ProjectData from './project/ProjectData.astro';
 import AnimatedCanvas from './animation/AnimaCanvas.astro';
+import ImageEvent from './shared/ImageEvent.astro';
+import JobTag from './experience/JobTag.astro';
 
 import { Image } from 'astro:assets';
 import LogoImage from '../assets/images/logo_6.png';
 // import SoreLogo from '../assets/images/logo-SORE.svg';
-
-import ImageEvent from './shared/ImageEvent.astro';
 
 export const frontmatter = {
   title: 'Projects',
 };
 ---
 
-<section class="mb-8 mt-5 flex w-full max-w-3xl items-center justify-center px-4">
+<section class="mx-auto mt-5 flex w-full max-w-3xl flex-col items-center justify-center gap-4 px-4">
+  <div>
+    <h1 class="text-textPrimary-100 font-offBitdotbold text-2xl tracking-widest lg:text-3xl">
+      My Project
+    </h1>
+  </div>
+
   <div class="grid grid-cols-1 gap-1 md:grid-cols-3 md:grid-rows-3">
     <div class="h-full w-full overflow-hidden rounded-xl md:col-span-1">
       <MusicPlayerEvent />
@@ -34,7 +40,7 @@ export const frontmatter = {
           width={2245}
           height={2245}
           alt="project 1"
-          loading="eager"
+          loading="lazy"
           class="w-20 animate-bounce"
         />
 
@@ -65,12 +71,14 @@ export const frontmatter = {
     >
       <div class="flex h-full flex-col gap-1">
         <div class="flex-1 rounded-xl border-2 border-zinc-800 p-4">
-          <h2 class="mb-3 text-xl font-medium">Projects</h2>
+          <h2 class="mb-3 font-offBitdotbold text-xl tracking-widest">Projects</h2>
           <ProjectData />
         </div>
 
         <div class="h-full w-full rounded-xl bg-zinc-800 p-4">
-          <h2 class="text-xl font-medium">Brief experience</h2>
+          <h2 class="font-offBitdotbold text-xl tracking-widest">Experience</h2>
+
+          <JobTag />
         </div>
       </div>
     </div>

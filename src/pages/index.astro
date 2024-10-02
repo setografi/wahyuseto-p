@@ -8,8 +8,6 @@ import Navbar from '../components/layout/Navbar.astro';
 ---
 
 <Layout title="Setografi" description="setografi portfolio">
-  <HomeEvent />
-
   <!-- <AppLoad client:only="react">
 		<div slot="projectSlot">
 		  <ProjectEvent />
@@ -21,14 +19,21 @@ import Navbar from '../components/layout/Navbar.astro';
 			<AboutEvent />
 		</div>
 	</AppLoad> -->
+
   <Navbar />
+
+  <div id="home-section">
+    <HomeEvent />
+  </div>
 
   <div id="project-section">
     <ProjectEvent />
   </div>
+
   <div id="blog-section">
     <BlogEvent />
   </div>
+
   <div id="about-section">
     <AboutEvent />
   </div>

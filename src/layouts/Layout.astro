@@ -18,19 +18,12 @@ const { title, description } = Astro.props;
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/img/logo_6.png" />
-    <!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" /> -->
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
   </head>
-  <body class="mx-auto flex min-h-screen max-w-3xl flex-col">
+  <body class="relative flex min-h-screen w-full flex-col">
     <slot />
     <FooterEvent />
   </body>
 </html>
-<style is:global>
-  html {
-    font-family: 'Lexend Deca', sans-serif;
-    background: hsl(240deg 5.88% 10%);
-  }
-</style>

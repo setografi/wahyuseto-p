@@ -19,14 +19,14 @@ const AboutList = ({ contenttitle, subtitle, content, contentimg, sociallink, lo
               loading={loading}
             />
             <div className="flex flex-col gap-2">
-              <div className="flex flex-row items-start justify-start">
+              <div className="flex flex-row items-start justify-start text-sm md:text-base">
                 <h2 id={`${contenttitle}-heading`} className="font-bold">
                   {contenttitle}
                 </h2>
                 <span className="ml-2 font-normal">{subtitle}</span>
               </div>
 
-              <p className="font-normal">{content}</p>
+              <p className="text-sm font-normal text-gray-400 md:text-base">{content}</p>
 
               <div className="flex items-start justify-start gap-4">
                 <button
