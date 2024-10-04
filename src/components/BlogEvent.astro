@@ -8,7 +8,15 @@ export const frontmatter = {
 };
 ---
 
-<section class="mx-auto mt-5 w-full md:w-[48rem]">
+<section class="mx-auto mt-5 w-full rounded-2xl border-2 border-bodyPrimary-800 md:w-[48rem]">
+  <div class="p-4">
+    <h1
+      class="text-center font-offBitdotbold text-2xl tracking-widest text-textPrimary-100 lg:text-3xl"
+    >
+      Blog's
+    </h1>
+  </div>
+
   <div class="flex max-w-lg justify-start p-4 text-white">
     <Image
       src={ProfileImage}
@@ -19,9 +27,9 @@ export const frontmatter = {
       class="mr-4 h-9 w-9 rounded-xl bg-white object-cover p-1"
     />
     <div class="flex flex-col gap-2">
-      <div class="flex flex-row items-start justify-start text-sm md:text-base">
-        <h2 class="font-bold">Wahyu Seto Pranata</h2>
-        <span class="ml-2 font-normal">. 1d ago</span>
+      <div class="flex flex-row items-end justify-start text-base">
+        <h2 class="font-bold">Setografi</h2><i class="ri-verified-badge-fill text-blueButton"></i>
+        <span class="ml-2 text-sm font-normal text-textPrimary-300">. 1d ago</span>
       </div>
 
       <p class="text-sm font-normal text-gray-400 md:text-base">

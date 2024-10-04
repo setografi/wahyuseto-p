@@ -4,74 +4,79 @@ import ProfileImage from '../assets/images/profileimage2.jpg';
 import ProfileButton from './shared/ProfileButton.jsx';
 ---
 
-<section class="mx-auto mt-6 flex w-full max-w-3xl items-center justify-center px-4 md:mt-8">
-  <div class="grid grid-flow-row gap-4">
-    <div class="mb-2 h-32 w-32">
-      <Image
-        class="h-32 w-32 rounded-2xl object-cover"
-        width={2730}
-        height={2730}
-        src={ProfileImage}
-        alt="Wahyu Seto Pranata"
-        loading="eager"
-      />
-    </div>
-
-    <!-- <div class=" flex flex-col">
-      <div class="relative mb-4 h-32 w-32">
-        <Image
-          class="h-32 w-32 rounded-2xl object-cover"
-          width={2730}
-          height={2730}
-          src={ProfileImage}
-          alt="Wahyu Seto Pranata"
-          loading="eager"
-        />
+<!-- <section class="glass-effect mx-auto mt-6 grid w-full max-w-3xl grid-flow-row gap-4 p-4 md:mt-8">
+  <ProfileButton />
+</section> -->
+<section class="mx-auto mt-5 w-full rounded-2xl border-2 border-bodyPrimary-800 md:w-[48rem]">
+  <div class="flex max-w-lg justify-start p-4 text-textPrimary-100">
+    <Image
+      src={ProfileImage}
+      width={2730}
+      height={2730}
+      alt="Wahyu Seto Pranata"
+      loading="eager"
+      class="mr-4 h-9 w-9 rounded-xl bg-textPrimary-100 object-cover p-1"
+    />
+    <div class="flex flex-col gap-2">
+      <div class="flex flex-row items-end justify-start gap-2 text-base">
+        <h2 class="font-bold">Setografi</h2><i class="ri-verified-badge-fill text-blueButton"></i>
+        <span class="text-sm font-normal text-textPrimary-300">. 1m ago</span>
       </div>
-      <div class="flex-auto justify-evenly">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center">
-            <div class="flex flex-col">
-              <div class="w-full text-lg font-medium leading-none text-whiteText">
-                Wahyu Seto Pranata
-              </div>
-              <div class="my-1 flex-auto gap-2 text-2xl tracking-widest text-whiteText lg:text-3xl">
-                <span class="font-offBit">Designer</span>
-                <span class="text-magentaC">|</span>
-                <span class="font-offBitdotbold">Developer</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
 
-    <div class="border-accentOne-600 flex flex-col border-t">
-      <div class="text-textPrimary-300 max-w-md py-4 text-base">
-        Hello, I'm <span class="text-textPrimary-100 text-lg font-medium">Wahyu Seto Pranata</span>,
+      <p class="text-sm font-normal text-textPrimary-300 md:text-base">
+        Hello, I'm <span class="text-lg font-medium text-textPrimary-100">Wahyu Seto Pranata</span>,
         a unique creative <span
-          class="text-textPrimary-100 font-offBit text-2xl tracking-widest lg:text-3xl"
+          class="font-offBit text-2xl tracking-widest text-textPrimary-100 lg:text-3xl"
           >Designer</span
         > and <span
-          class="text-textPrimary-100 font-offBitdotbold text-2xl tracking-widest lg:text-3xl"
+          class="font-offBitdotbold text-2xl tracking-widest text-textPrimary-100 lg:text-3xl"
           >Developer</span
         >
         who spends much of his free time drinking coffee and traveling. I like learning new things and
         trying to apply them.
+      </p>
+
+      <div class="my-2 overflow-hidden rounded-xl">
+        <Image
+          src={ProfileImage}
+          width={2730}
+          height={2730}
+          alt="Blog 01"
+          loading="eager"
+          class="h-64 w-full object-cover"
+        />
       </div>
 
-      <div class="text-textPrimary-100 flex flex-col gap-2 text-sm md:flex-row">
-        <div class="inline-flex items-center p-1">
-          <i class="ri-map-pin-2-line mr-2"></i>
-          <p>Indonesia, Kepulauan Riau</p>
+      <div class="inline-flex items-center pb-2 text-textPrimary-100">
+        <i class="ri-map-pin-2-line mr-2 text-xl"></i>
+        <p class="text-sm">Kepulauan Riau, Indonesia</p>
+      </div>
+
+      <div class="flex flex-col items-start justify-start gap-2 md:flex-row">
+        <div class="flex gap-2">
+          <button
+            class="rounded-full bg-textPrimary-100 px-3 py-2 text-xl text-bodyPrimary-800 transition duration-300 ease-in-out hover:text-red-500"
+          >
+            <i class="ri-heart-3-line"></i>
+          </button>
+
+          <a
+            href="mailto:wahyusetotkrx18@gmail"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Email me"
+            class="inline-flex items-center justify-center gap-2 rounded-full bg-accentOne-600 px-4 py-2 text-xl text-textPrimary-100 transition duration-300 ease-in"
+          >
+            <p class="text-sm">Say hi</p>
+            <i class="ri-send-plane-line"></i>
+          </a>
         </div>
-        <div class="bg-bodyPrimary-800 inline-flex items-center rounded-full px-2 py-1">
+
+        <div class="inline-flex items-center rounded-full bg-bodyPrimary-700 px-4 py-2">
           <span class="mr-2 text-xl text-green-400">•</span>
-          <p>Available for work</p>
+          <p class="text-sm">Available for work</p>
         </div>
       </div>
     </div>
-
-    <ProfileButton />
   </div>
 </section>

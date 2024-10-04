@@ -26,7 +26,7 @@ export default {
         magentaC: '#F06292',
       },
       fontFamily: {
-        lexendDeca: ['Lexend Deca', 'sans-serif'],
+        ibmPlexsans: ['IBM Plex Sans', 'sans-serif'],
         ibmPlexmono: ['IBM Plex Mono', 'monospace'],
         offBit: ['OffBit-Regular', 'sans-serif'],
         offBitdotbold: ['OffBit-DotBold', 'sans-serif'],
