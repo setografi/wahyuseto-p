@@ -1,13 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import ProfileImage from '../assets/images/profileimage2.jpg';
-import ProfileButton from './shared/ProfileButton.jsx';
 ---
 
-<!-- <section class="glass-effect mx-auto mt-6 grid w-full max-w-3xl grid-flow-row gap-4 p-4 md:mt-8">
-  <ProfileButton />
-</section> -->
-<section class="mx-auto mt-5 w-full rounded-2xl border-2 border-bodyPrimary-800 md:w-[48rem]">
+<section class="w-full">
   <div class="flex max-w-lg justify-start p-4 text-textPrimary-100">
     <Image
       src={ProfileImage}
@@ -19,7 +15,8 @@ import ProfileButton from './shared/ProfileButton.jsx';
     />
     <div class="flex flex-col gap-2">
       <div class="flex flex-row items-end justify-start gap-2 text-base">
-        <h2 class="font-bold">Setografi</h2><i class="ri-verified-badge-fill text-blueButton"></i>
+        <h2 class="font-bold">Setografi</h2><i class="ri-verified-badge-fill text-accentCyan-600"
+        ></i>
         <span class="text-sm font-normal text-textPrimary-300">. 1m ago</span>
       </div>
 
@@ -55,9 +52,9 @@ import ProfileButton from './shared/ProfileButton.jsx';
       <div class="flex flex-col items-start justify-start gap-2 md:flex-row">
         <div class="flex gap-2">
           <button
-            class="rounded-full bg-textPrimary-100 px-3 py-2 text-xl text-bodyPrimary-800 transition duration-300 ease-in-out hover:text-red-500"
+            class="rounded-full bg-textPrimary-100 px-3 py-2 text-xl text-accentOne-600 transition duration-300 ease-in-out hover:text-textPrimary-100"
           >
-            <i class="ri-heart-3-line"></i>
+            <i class="ri-heart-3-fill"></i>
           </button>
 
           <a
@@ -73,7 +70,7 @@ import ProfileButton from './shared/ProfileButton.jsx';
         </div>
 
         <div class="inline-flex items-center rounded-full bg-bodyPrimary-700 px-4 py-2">
-          <span class="mr-2 text-xl text-green-400">•</span>
+          <span class="mr-2 text-2xl text-green-400">•</span>
           <p class="text-sm">Available for work</p>
         </div>
       </div>

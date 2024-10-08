@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AboutList from './AboutList';
 
 const aboutItems = [
@@ -35,6 +35,15 @@ const aboutItems = [
 ];
 
 function AboutSectionData() {
+  const [likedItems, setLikedItems] = useState({});
+
+  const handleLike = (index) => {
+    setLikedItems((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
   return (
     <div>
       {aboutItems.map((item, index) => (
@@ -46,6 +55,8 @@ function AboutSectionData() {
           contentimg={item.contentimg}
           sociallink={item.sociallink}
           loading={index === 0 ? 'eager' : 'lazy'}
+          isLiked={!!likedItems[index]} // Check if item is liked
+          onLike={() => handleLike(index)} // Pass handler function
         />
       ))}
     </div>

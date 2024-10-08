@@ -15,11 +15,20 @@ export default {
           300: '#DAD7D4', // Turunan 2
         },
         accentOne: {
-          600: '#F06292', // Aksen magenta utama
-          500: '#D95780', // Turunan 1
-          400: '#C44E71', // Turunan 2
+          600: '#F06292', // Magenta utama
+          500: '#D95780', // Magenta Turunan 1
+          400: '#C44E71', // Magenta Turunan 2
         },
-        // bodyPrimary: '#121418',
+        accentCyan: {
+          600: '#00B8D4', // Cyan utama
+          500: '#00A0BD', // Cyan Turunan 1
+          400: '#008AA7', // Cyan Turunan 2
+        },
+        accentYellow: {
+          600: '#FFEB3B', // Yellow utama
+          500: '#FDD835', // Yellow Turunan 1
+          400: '#FBC02D', // Yellow Turunan 2
+        },
         grayNetral: '#736F70',
         whiteText: '#e9e6e4',
         blueButton: '#06B6D4',

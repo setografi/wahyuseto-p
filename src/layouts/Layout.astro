@@ -1,5 +1,5 @@
 ---
-import FooterEvent from '../components/layout/FooterEvent.astro';
+// import FooterEvent from '../components/layout/FooterEvent.astro';
 import '../assets/style/global.css';
 import 'remixicon/fonts/remixicon.css';
 
@@ -22,8 +22,7 @@ const { title, description } = Astro.props;
     <meta name="description" content={description} />
     <title>{title}</title>
   </head>
-  <body class="relative flex min-h-screen w-full flex-col">
+  <body class="h-full w-full">
     <slot />
-    <FooterEvent />
   </body>
 </html>

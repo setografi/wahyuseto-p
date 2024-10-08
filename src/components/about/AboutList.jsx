@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
+import 'remixicon/fonts/remixicon.css';
 
-const AboutList = ({ contenttitle, subtitle, content, contentimg, sociallink, loading }) => {
-  const [isLiked, setIsLiked] = useState(false);
-
-  const handleLike = () => {
-    setIsLiked(!isLiked);
-  };
-
+const AboutList = ({
+  contenttitle,
+  subtitle,
+  content,
+  contentimg,
+  sociallink,
+  loading,
+  isLiked,
+  onLike,
+}) => {
   return (
     <section aria-labelledby={`${contenttitle}-heading`}>
       <div className="mx-auto">
@@ -30,16 +34,17 @@ const AboutList = ({ contenttitle, subtitle, content, contentimg, sociallink, lo
 
               <div className="flex items-start justify-start gap-4">
                 <button
-                  onClick={handleLike}
+                  onClick={onLike}
                   aria-label={isLiked ? 'Unlike' : 'Like'}
-                  className="text-xl hover:text-red-500"
+                  className="text-xl"
                 >
                   {isLiked ? (
-                    <i className="ri-heart-3-fill text-red-500"></i>
+                    <i className="ri-heart-3-fill text-red-500 hover:text-textPrimary-100"></i>
                   ) : (
-                    <i className="ri-heart-3-line text-textPrimary-100"></i>
+                    <i className="ri-heart-3-line text-textPrimary-100 hover:text-red-500"></i>
                   )}
                 </button>
+
                 <a
                   href={sociallink}
                   target="_blank"
