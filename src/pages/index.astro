@@ -20,13 +20,13 @@ import FooterEvent from '../components/layout/FooterEvent.astro';
 			<AboutEvent />
 		</div>
 	</AppLoad> -->
-  <div class="m-6 grid h-full grid-cols-2 gap-2 border-2 border-bodyPrimary-700">
-    <div class="flex flex-col items-start justify-between">
+  <div class="relative m-6 h-full border-2 border-bodyPrimary-700">
+    <div class="absolute flex h-full flex-col items-start justify-between">
       <Navbar />
       <FooterEvent />
     </div>
 
-    <div class="flex-1 overflow-y-auto">
+    <div class="flex flex-col items-center justify-end">
       <div id="home-section">
         <HomeEvent />
       </div>

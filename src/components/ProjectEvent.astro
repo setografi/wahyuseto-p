@@ -1,138 +1,168 @@
 ---
-import MusicPlayerEvent from './shared/MusicPlayerEvent.jsx';
-import ProgressEvent from './shared/ProgressEvent.astro';
-import ProjectData from './project/ProjectData.astro';
-import AnimatedCanvas from './animation/AnimaCanvas.astro';
-import ImageEvent from './shared/ImageEvent.astro';
-import JobTag from './experience/JobTag.astro';
-
-import { Image } from 'astro:assets';
-import LogoImage from '../assets/images/logo_6.png';
-// import SoreLogo from '../assets/images/logo-SORE.svg';
-
 export const frontmatter = {
   title: 'Projects',
 };
 ---
 
-<section class="mx-auto mt-5 flex w-full max-w-3xl flex-col items-center justify-center gap-4 px-4">
-  <div class="p-4">
-    <h1 class="font-offBitdotbold text-2xl tracking-widest text-textPrimary-100 lg:text-3xl">
-      Project's
-    </h1>
-  </div>
-
-  <div class="grid grid-cols-1 gap-1 md:grid-cols-3 md:grid-rows-3">
-    <div class="h-full w-full overflow-hidden rounded-xl md:col-span-1">
-      <MusicPlayerEvent />
-    </div>
-
-    <div class="h-full w-full overflow-hidden rounded-xl border-2 border-zinc-800 md:col-span-1">
-      <ProgressEvent />
-    </div>
-
-    <div
-      class="flex h-full w-full items-center justify-center overflow-hidden rounded-xl bg-zinc-800 md:col-span-1 md:row-span-2"
-    >
-      <div class="my-12 flex flex-col items-center">
-        <Image
-          src={LogoImage}
-          width={2245}
-          height={2245}
-          alt="project 1"
-          loading="lazy"
-          class="w-20 animate-bounce"
-        />
-
-        <h2 class="p-4 text-center font-offBitdotbold text-2xl tracking-widest text-whiteText">
-          This page isn't ready yet
-        </h2>
-
-        <button
-          class="cursor-pointer rounded-xl bg-magentaC px-5 py-3 font-offBit text-base tracking-widest text-whiteText transition duration-300 hover:bg-grayNetral hover:text-gray-400"
-        >
-          Okay
-        </button>
-      </div>
-    </div>
-
-    <div
-      class="h-full w-full overflow-hidden rounded-xl bg-transparent md:col-span-1 md:col-start-3 md:row-start-3"
-    >
-      <ImageEvent
-        imagesource="/img/SerenityLogo2.jpeg"
-        imagetitle="Serenity Logo Desgin"
-        imagedesc={`Serenity is a mobile app for exploring interesting places in Jakarta.`}
-      />
-    </div>
-
-    <div
-      class="col-start-1 h-full w-full overflow-hidden text-whiteText md:col-span-2 md:row-span-2 md:row-start-2"
-    >
-      <div class="flex h-full flex-col gap-1">
-        <div class="flex-1 rounded-xl border-2 border-zinc-800 p-4">
-          <h2 class="mb-3 font-offBitdotbold text-xl tracking-widest">Projects</h2>
-          <ProjectData />
-        </div>
-
-        <div class="h-full w-full rounded-xl bg-zinc-800 p-4">
-          <h2 class="font-offBitdotbold text-xl tracking-widest">Experience</h2>
-
-          <JobTag />
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="h-full w-full overflow-hidden rounded-xl bg-transparent md:col-span-1 md:row-start-4"
-    >
-      <ImageEvent
-        imagesource="/img/gamedev-project.png"
-        imagetitle="Game Dev Project"
-        imagedesc={`Ongoing project to create a 2D game using JavaScript.`}
-      />
-    </div>
-
-    <div class="relative h-full w-full overflow-hidden rounded-xl md:col-span-2 md:row-start-4">
-      <!-- <div class="flex h-full w-full items-start justify-center p-4 text-white">
-        <Image
-          src={SoreLogo}
-          alt="Wahyu Seto Pranata"
-          loading="lazy"
-          class="mr-4 h-9 w-9 rounded-xl bg-white object-cover p-1"
-        />
-        <div class="flex flex-col gap-2">
-          <div class="flex flex-row items-start justify-start">
-            <h2 class="font-bold">SORE Pixel Crafters</h2>
-            <span class="ml-2 font-normal">. 1m ago</span>
-          </div>
-
-          <p class="font-normal">
-            SORE Pixel Crafters is a digital agency that specializes in UI/UX Design and Web
-            Development.
-          </p>
-
-          <div class="flex items-start justify-start gap-4">
-            <button class="text-xl hover:text-red-500">
-              <i class="ri-heart-3-line"></i>
-            </button>
-
-            <a
-              class="text-xl hover:text-red-500"
-              href="https://sore-pixelcrafters.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Seto Journey Website"
-            >
-              <i class="ri-send-plane-line"></i>
-            </a>
-          </div>
-        </div>
-      </div> -->
-
-      <div class="inset-0 h-full w-full md:absolute">
-        <AnimatedCanvas />
-      </div>
-    </div>
-  </div>
+<section class="h-full w-full">
+  <canvas id="canvas" class="h-full w-full bg-black"></canvas>
 </section>
+
+<script type="module">
+  let canvas = document.getElementById('canvas');
+  let ctx = canvas.getContext('2d');
+
+  let cameraOffset = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+  let cameraZoom = 1;
+  let MAX_ZOOM = 5;
+  let MIN_ZOOM = 0.1;
+  let SCROLL_SENSITIVITY = 0.0005;
+
+  // Array untuk menyimpan informasi gambar (sumber, posisi, lebar, tinggi)
+  let images = [
+    { src: '/src/assets/images/profileimage2.jpg', x: 100, y: 100, width: 150, height: 150 },
+    { src: '/src/assets/images/seto-journey.png', x: 250, y: 150, width: 200, height: 200 },
+  ];
+  // Array untuk menyimpan objek Image
+  let loadedImages = [];
+
+  // Load images
+  function loadImages() {
+    let totalImages = images.length;
+    let loadedCount = 0;
+
+    for (let i = 0; i < totalImages; i++) {
+      let img = new Image();
+      img.src = images[i].src;
+      img.onload = function () {
+        loadedCount++;
+        if (loadedCount === totalImages) {
+          draw(); // Mulai menggambar saat semua gambar dimuat
+        }
+      };
+      loadedImages.push(img);
+    }
+  }
+
+  function draw() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Translate to the canvas centre before zooming - so you'll always zoom on what you're looking directly at
+    ctx.translate(window.innerWidth / 2, window.innerHeight / 2);
+    ctx.scale(cameraZoom, cameraZoom);
+    ctx.translate(
+      -window.innerWidth / 2 + cameraOffset.x,
+      -window.innerHeight / 2 + cameraOffset.y
+    );
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+    ctx.fillStyle = '#fff';
+    drawText('Simple Pan and Zoom Canvas', -255, -100, 32, 'courier');
+    drawText('Test', -255, -200, 32, 'courier');
+
+    // drawRect(100, 100, 250, 250, 'rgba(255, 0, 0, 0.5)');
+    // Gambar semua gambar dengan posisi dan ukuran yang telah ditentukan
+    for (let i = 0; i < loadedImages.length; i++) {
+      ctx.drawImage(loadedImages[i], images[i].x, images[i].y, images[i].width, images[i].height); // Gambar di posisi dan ukuran kustom
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  // Gets the relevant location from a mouse or single touch event
+  function getEventLocation(e) {
+    if (e.touches && e.touches.length == 1) {
+      return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    } else if (e.clientX && e.clientY) {
+      return { x: e.clientX, y: e.clientY };
+    }
+  }
+
+  function drawRect(x, y, width, height) {
+    ctx.fillRect(x, y, width, height);
+  }
+
+  function drawText(text, x, y, size, font) {
+    ctx.font = `${size}px ${font}`;
+    ctx.fillText(text, x, y);
+  }
+
+  let isDragging = false;
+  let dragStart = { x: 0, y: 0 };
+
+  function onPointerDown(e) {
+    isDragging = true;
+    dragStart.x = getEventLocation(e).x / cameraZoom - cameraOffset.x;
+    dragStart.y = getEventLocation(e).y / cameraZoom - cameraOffset.y;
+  }
+
+  function onPointerUp(e) {
+    isDragging = false;
+    initialPinchDistance = null;
+    lastZoom = cameraZoom;
+  }
+
+  function onPointerMove(e) {
+    if (isDragging) {
+      cameraOffset.x = getEventLocation(e).x / cameraZoom - dragStart.x;
+      cameraOffset.y = getEventLocation(e).y / cameraZoom - dragStart.y;
+    }
+  }
+
+  function handleTouch(e, singleTouchHandler) {
+    if (e.touches.length == 1) {
+      singleTouchHandler(e);
+    } else if (e.type == 'touchmove' && e.touches.length == 2) {
+      isDragging = false;
+      handlePinch(e);
+    }
+  }
+
+  let initialPinchDistance = null;
+  let lastZoom = cameraZoom;
+
+  function handlePinch(e) {
+    e.preventDefault();
+
+    let touch1 = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    let touch2 = { x: e.touches[1].clientX, y: e.touches[1].clientY };
+
+    // This is distance squared, but no need for an expensive sqrt as it's only used in ratio
+    let currentDistance = (touch1.x - touch2.x) ** 2 + (touch1.y - touch2.y) ** 2;
+
+    if (initialPinchDistance == null) {
+      initialPinchDistance = currentDistance;
+    } else {
+      adjustZoom(null, currentDistance / initialPinchDistance);
+    }
+  }
+
+  function adjustZoom(zoomAmount, zoomFactor) {
+    if (!isDragging) {
+      if (zoomAmount) {
+        cameraZoom += zoomAmount;
+      } else if (zoomFactor) {
+        // console.log(zoomFactor);
+        cameraZoom = zoomFactor * lastZoom;
+      }
+
+      cameraZoom = Math.min(cameraZoom, MAX_ZOOM);
+      cameraZoom = Math.max(cameraZoom, MIN_ZOOM);
+
+      // console.log(zoomAmount);
+    }
+  }
+
+  canvas.addEventListener('mousedown', onPointerDown);
+  canvas.addEventListener('touchstart', (e) => handleTouch(e, onPointerDown));
+  canvas.addEventListener('mouseup', onPointerUp);
+  canvas.addEventListener('touchend', (e) => handleTouch(e, onPointerUp));
+  canvas.addEventListener('mousemove', onPointerMove);
+  canvas.addEventListener('touchmove', (e) => handleTouch(e, onPointerMove));
+  canvas.addEventListener('wheel', (e) => adjustZoom(e.deltaY * SCROLL_SENSITIVITY));
+
+  // Ready, set, go
+  loadImages();
+  draw();
+</script>
