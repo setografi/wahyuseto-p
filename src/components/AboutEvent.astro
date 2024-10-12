@@ -1,21 +1,144 @@
 ---
+import { Image } from 'astro:assets';
 import AboutSectionData from './about/AboutSectionData.jsx';
+
+import ProfileImage from '../assets/images/profileimage2.jpg';
+import Blog01 from '../assets/images/seto-journey.png';
 
 export const frontmatter = {
   title: 'About',
 };
 ---
 
-<section class="w-full">
-  <div class="p-4">
-    <h1
-      class="text-center font-offBitdotbold text-2xl tracking-widest text-textPrimary-100 lg:text-3xl"
-    >
-      Contact Me?
-    </h1>
-  </div>
+<section id="about-section" class="h-full min-h-screen w-full p-4">
+  <h1
+    class="text-right font-offBitdotbold text-2xl tracking-widest text-textPrimary-100 lg:text-3xl"
+  >
+    About Me
+  </h1>
 
-  <div class="grid grid-flow-row gap-5">
+  <div class="grid grid-flow-row justify-end gap-4">
+    <div class="flex w-full max-w-lg justify-start text-textPrimary-100">
+      <Image
+        src={ProfileImage}
+        width={2730}
+        height={2730}
+        alt="Wahyu Seto Pranata"
+        loading="eager"
+        class="mr-4 h-9 w-9 rounded-xl bg-textPrimary-100 object-cover p-1"
+      />
+      <div class="flex flex-col gap-2">
+        <div class="flex flex-col justify-start gap-1 md:flex-row md:justify-between">
+          <div class="inline-flex items-end justify-start text-base">
+            <h2 class="mr-2 font-bold">Setografi</h2><i
+              class="ri-verified-badge-fill mr-2 text-accentCyan-600"></i>
+            <span class="text-sm font-normal text-textPrimary-300">. 1m ago</span>
+          </div>
+
+          <div class="inline-flex items-end text-textPrimary-300">
+            <i class="ri-map-pin-2-line mr-2"></i>
+            <p class="text-sm">Kepulauan Riau, Indonesia</p>
+          </div>
+        </div>
+
+        <p class="text-sm font-normal text-textPrimary-300 md:text-base">
+          Hello, I'm <span class="font-bold text-textPrimary-100">Wahyu Seto Pranata</span>, a
+          unique creative <span class="font-offBit tracking-widest text-textPrimary-100"
+            >Designer</span
+          > and <span class="font-offBitdotbold tracking-widest text-textPrimary-100"
+            >Developer</span
+          >
+          who spends much of his free time drinking coffee and traveling. I like learning new things
+          and trying to apply them.
+        </p>
+
+        <div class="my-2 overflow-hidden rounded-xl">
+          <Image
+            src={ProfileImage}
+            width={2730}
+            height={2730}
+            alt="Blog 01"
+            loading="eager"
+            class="h-64 w-full object-cover"
+          />
+        </div>
+
+        <div class="flex flex-col items-start justify-start gap-2 md:flex-row">
+          <div class="flex gap-2">
+            <button class="rounded-full bg-textPrimary-100 px-3 py-2 text-xl text-accentOne-600">
+              <i class="ri-heart-3-fill"></i>
+            </button>
+
+            <a
+              href="mailto:wahyusetotkrx18@gmail"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email me"
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-accentOne-600 px-4 py-2 text-xl text-textPrimary-100 transition duration-300 ease-in"
+            >
+              <p class="text-sm">Say hi</p>
+              <i class="ri-mail-line"></i>
+            </a>
+          </div>
+
+          <div class="inline-flex items-center rounded-full bg-bodyPrimary-700 px-4 py-2">
+            <span class="mr-2 text-2xl text-green-400">•</span>
+            <p class="text-sm">Available for work</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex w-full max-w-lg justify-start text-textPrimary-100">
+      <Image
+        src={ProfileImage}
+        width={2730}
+        height={2730}
+        alt="Wahyu Seto Pranata"
+        loading="eager"
+        class="mr-4 h-9 w-9 rounded-xl bg-white object-cover p-1"
+      />
+      <div class="flex flex-col gap-2">
+        <div class="flex flex-row items-end justify-start gap-2 text-base">
+          <h2 class="font-bold">Setografi</h2><i class="ri-verified-badge-fill text-accentCyan-600"
+          ></i>
+          <span class="ml-2 text-sm font-normal text-textPrimary-300">. 1d ago</span>
+        </div>
+
+        <p class="text-sm font-normal text-textPrimary-300 md:text-base">
+          I've been writing several blog posts lately on my personal blog. You can visit it if
+          you're interested!
+        </p>
+
+        <div class="my-2 overflow-hidden rounded-xl">
+          <Image
+            src={Blog01}
+            width={1366}
+            height={715}
+            alt="Blog 01"
+            loading="eager"
+            class="h-64 w-full object-cover"
+          />
+        </div>
+
+        <div class="flex items-start justify-start gap-4">
+          <button class="text-xl hover:text-red-500">
+            <i class="ri-heart-3-line"></i>
+          </button>
+
+          <a
+            class="text-xl hover:text-red-500"
+            href="https://setojourney.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Seto Journey Website"
+          >
+            <i class="ri-send-plane-line"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <AboutSectionData client:load />
   </div>
 </section>

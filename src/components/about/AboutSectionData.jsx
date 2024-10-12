@@ -45,7 +45,7 @@ function AboutSectionData() {
   };
 
   return (
-    <div>
+    <div className="grid grid-flow-row gap-4">
       {aboutItems.map((item, index) => (
         <AboutList
           key={index}

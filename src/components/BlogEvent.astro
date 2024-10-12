@@ -1,69 +1,23 @@
 ---
-import { Image } from 'astro:assets';
-import ProfileImage from '../assets/images/profileimage.jpg';
-import Blog01 from '../assets/images/seto-journey.png';
+import JobTag from './experience/JobTag.astro';
+import MusicPlayerEvent from './shared/MusicPlayerEvent';
+import ProgressEvent from './shared/ProgressEvent.astro';
 
 export const frontmatter = {
   title: 'Blogs',
 };
 ---
 
-<section class="w-full">
-  <div class="p-4">
-    <h1
-      class="text-center font-offBitdotbold text-2xl tracking-widest text-textPrimary-100 lg:text-3xl"
-    >
-      Blog's
-    </h1>
-  </div>
+<section id="blog-section" class="h-full min-h-screen w-full p-4">
+  <h1
+    class="text-right font-offBitdotbold text-2xl tracking-widest text-textPrimary-100 lg:text-3xl"
+  >
+    Info
+  </h1>
 
-  <div class="flex max-w-lg justify-start p-4 text-white">
-    <Image
-      src={ProfileImage}
-      width={2730}
-      height={2730}
-      alt="Wahyu Seto Pranata"
-      loading="eager"
-      class="mr-4 h-9 w-9 rounded-xl bg-white object-cover p-1"
-    />
-    <div class="flex flex-col gap-2">
-      <div class="flex flex-row items-end justify-start gap-2 text-base">
-        <h2 class="font-bold">Setografi</h2><i class="ri-verified-badge-fill text-accentCyan-600"
-        ></i>
-        <span class="ml-2 text-sm font-normal text-textPrimary-300">. 1d ago</span>
-      </div>
-
-      <p class="text-sm font-normal text-gray-400 md:text-base">
-        I've been writing several blog posts lately on my personal blog. You can visit it if you're
-        interested!
-      </p>
-
-      <div class="my-2 overflow-hidden rounded-xl">
-        <Image
-          src={Blog01}
-          width={1366}
-          height={715}
-          alt="Blog 01"
-          loading="eager"
-          class="h-64 w-full object-cover"
-        />
-      </div>
-
-      <div class="flex items-start justify-start gap-4">
-        <button class="text-xl hover:text-red-500">
-          <i class="ri-heart-3-line"></i>
-        </button>
-
-        <a
-          class="text-xl hover:text-red-500"
-          href="https://setojourney.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Visit Seto Journey Website"
-        >
-          <i class="ri-send-plane-line"></i>
-        </a>
-      </div>
-    </div>
+  <div class="grid grid-cols-1 md:grid-cols-2">
+    <JobTag />
+    <MusicPlayerEvent />
+    <ProgressEvent />
   </div>
 </section>

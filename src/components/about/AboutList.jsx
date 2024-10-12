@@ -14,7 +14,7 @@ const AboutList = ({
   return (
     <section aria-labelledby={`${contenttitle}-heading`}>
       <div className="mx-auto">
-        <div className="max-w-lg p-4 text-white">
+        <div className="max-w-lg text-white">
           <div className="flex justify-start">
             <img
               className="mr-4 h-9 w-9 rounded-xl bg-white p-1"
@@ -30,7 +30,7 @@ const AboutList = ({
                 <span className="ml-2 text-sm font-normal text-textPrimary-300">{subtitle}</span>
               </div>
 
-              <p className="text-sm font-normal text-gray-400 md:text-base">{content}</p>
+              <p className="text-sm font-normal text-textPrimary-300 md:text-base">{content}</p>
 
               <div className="flex items-start justify-start gap-4">
                 <button

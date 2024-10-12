@@ -20,28 +20,17 @@ import FooterEvent from '../components/layout/FooterEvent.astro';
 			<AboutEvent />
 		</div>
 	</AppLoad> -->
-  <div class="relative m-6 h-full border-2 border-bodyPrimary-700">
-    <div class="absolute flex h-full flex-col items-start justify-between">
-      <Navbar />
-      <FooterEvent />
-    </div>
 
-    <div class="flex flex-col items-center justify-end">
-      <div id="home-section">
-        <HomeEvent />
-      </div>
-
-      <div id="project-section">
-        <ProjectEvent />
-      </div>
-
-      <div id="blog-section">
-        <BlogEvent />
-      </div>
-
-      <div id="about-section">
-        <AboutEvent />
-      </div>
-    </div>
+  <div class="fixed flex items-start">
+    <Navbar />
   </div>
+
+  <div class="flex h-full flex-col overflow-y-auto">
+    <HomeEvent />
+    <ProjectEvent />
+    <BlogEvent />
+    <AboutEvent />
+  </div>
+
+  <FooterEvent />
 </Layout>
