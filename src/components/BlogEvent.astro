@@ -8,15 +8,19 @@ export const frontmatter = {
 };
 ---
 
-<section id="blog-section" class="h-full min-h-screen w-full p-4">
+<section id="blog-section" class="mt-36 h-full min-h-screen w-full p-4">
   <h1
-    class="text-right font-offBitdotbold text-2xl tracking-widest text-textPrimary-100 lg:text-3xl"
+    class="py-4 text-left font-offBitdotbold text-2xl tracking-widest text-textPrimary-100 md:text-right lg:text-3xl"
   >
     Info
   </h1>
 
   <div class="grid grid-cols-1 md:grid-cols-2">
-    <JobTag />
+    <div class="h-full w-full bg-zinc-800 p-4">
+      <h2 class="font-offBitdotbold text-xl tracking-widest text-textPrimary-100">Experience</h2>
+
+      <JobTag />
+    </div>
     <MusicPlayerEvent />
     <ProgressEvent />
   </div>

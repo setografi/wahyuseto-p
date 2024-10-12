@@ -18,29 +18,29 @@ export const frontmatter = {
   let MIN_ZOOM = 0.1;
   let SCROLL_SENSITIVITY = 0.0005;
 
-  // let images = [
-  //   { src: '/src/assets/images/profileimage2.jpg', x: 100, y: 100, width: 150, height: 150 },
-  //   { src: '/src/assets/images/seto-journey.png', x: 250, y: 150, width: 200, height: 200 },
-  // ];
+  let images = [
+    { src: './img/profileimage2.jpg', x: 100, y: 100, width: 550, height: 500 },
+    { src: './img/seto-journey.png', x: 100, y: 800, width: 1300, height: 700 },
+  ];
 
-  // let loadedImages = [];
+  let loadedImages = [];
 
-  // function loadImages() {
-  //   let totalImages = images.length;
-  //   let loadedCount = 0;
+  function loadImages() {
+    let totalImages = images.length;
+    let loadedCount = 0;
 
-  //   for (let i = 0; i < totalImages; i++) {
-  //     let img = new Image();
-  //     img.src = images[i].src;
-  //     img.onload = function () {
-  //       loadedCount++;
-  //       if (loadedCount === totalImages) {
-  //         draw();
-  //       }
-  //     };
-  //     loadedImages.push(img);
-  //   }
-  // }
+    for (let i = 0; i < totalImages; i++) {
+      let img = new Image();
+      img.src = images[i].src;
+      img.onload = function () {
+        loadedCount++;
+        if (loadedCount === totalImages) {
+          draw();
+        }
+      };
+      loadedImages.push(img);
+    }
+  }
 
   function draw() {
     canvas.width = window.innerWidth;
@@ -56,13 +56,13 @@ export const frontmatter = {
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
     ctx.fillStyle = '#fff';
-    drawText('Simple Pan and Zoom Canvas', -255, -100, 32, 'courier');
-    drawText('Test', -255, -200, 32, 'courier');
+    drawText('Hi, This section is not ready yet', -255, -100, 32, 'courier');
+    drawText('My Project', -255, -200, 32, 'courier');
 
     // drawRect(100, 100, 250, 250, 'rgba(255, 0, 0, 0.5)');
-    // for (let i = 0; i < loadedImages.length; i++) {
-    //   ctx.drawImage(loadedImages[i], images[i].x, images[i].y, images[i].width, images[i].height); // Gambar di posisi dan ukuran kustom
-    // }
+    for (let i = 0; i < loadedImages.length; i++) {
+      ctx.drawImage(loadedImages[i], images[i].x, images[i].y, images[i].width, images[i].height); // Gambar di posisi dan ukuran kustom
+    }
 
     requestAnimationFrame(draw);
   }
@@ -160,6 +160,6 @@ export const frontmatter = {
   canvas.addEventListener('wheel', (e) => adjustZoom(e.deltaY * SCROLL_SENSITIVITY));
 
   // Ready, set, go
-  // loadImages();
+  loadImages();
   draw();
 </script>
