@@ -6,6 +6,7 @@ import BlogEvent from '../components/BlogEvent.astro';
 import AboutEvent from '../components/AboutEvent.astro';
 import Navbar from '../components/layout/Navbar.astro';
 import FooterEvent from '../components/layout/FooterEvent.astro';
+import NavbarEvent from '../components/layout/NavbarEvent';
 ---
 
 <Layout title="Setografi" description="setografi portfolio">
@@ -20,17 +21,30 @@ import FooterEvent from '../components/layout/FooterEvent.astro';
 			<AboutEvent />
 		</div>
 	</AppLoad> -->
-
-  <div class="fixed flex items-start">
+  <!-- <div class="relative mx-8 mb-4 mt-8 min-h-full overflow-hidden border border-white">
     <Navbar />
-  </div>
 
-  <div class="flex h-full flex-col overflow-y-auto">
-    <HomeEvent />
-    <ProjectEvent />
-    <BlogEvent />
-    <AboutEvent />
+    <div class="flex flex-col">
+      <HomeEvent />
+      <ProjectEvent />
+      <BlogEvent />
+      <AboutEvent />
+    </div>
   </div>
+  <FooterEvent /> -->
 
-  <FooterEvent />
+  <div class="mx-auto h-screen overflow-hidden p-6">
+    <div class="flex h-full overflow-hidden border border-textPrimary-100">
+      <div class="fixed h-fit bg-transparent text-textPrimary-100">
+        <Navbar />
+      </div>
+
+      <div class="min-h-screen w-full overflow-y-scroll bg-bodyPrimary-900 text-textPrimary-100">
+        <HomeEvent />
+        <ProjectEvent />
+        <BlogEvent />
+        <AboutEvent />
+      </div>
+    </div>
+  </div>
 </Layout>

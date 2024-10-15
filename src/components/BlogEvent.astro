@@ -8,20 +8,21 @@ export const frontmatter = {
 };
 ---
 
-<section id="blog-section" class="mt-36 h-full min-h-screen w-full p-4">
+<section id="blog-section" class="mt-36 h-full w-full p-4 md:mt-0">
   <h1
-    class="py-4 text-left font-offBitdotbold text-2xl tracking-widest text-textPrimary-100 md:text-right lg:text-3xl"
+    class="mb-4 text-left font-offBitdotbold text-2xl tracking-widest text-textPrimary-100 md:text-right lg:text-3xl"
   >
     Info
   </h1>
 
-  <div class="grid grid-cols-1 md:grid-cols-2">
-    <div class="h-full w-full bg-zinc-800 p-4">
-      <h2 class="font-offBitdotbold text-xl tracking-widest text-textPrimary-100">Experience</h2>
-
-      <JobTag />
+  <div class="grid grid-flow-row justify-end">
+    <div class="max-w-lg">
+      <div class="w-full bg-zinc-800 p-4">
+        <h2 class="font-offBitdotbold text-xl tracking-widest text-textPrimary-100">Experience</h2>
+        <JobTag />
+      </div>
+      <MusicPlayerEvent />
+      <ProgressEvent />
     </div>
-    <MusicPlayerEvent />
-    <ProgressEvent />
   </div>
 </section>
