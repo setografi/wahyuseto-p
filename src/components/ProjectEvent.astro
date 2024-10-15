@@ -18,9 +18,20 @@ export const frontmatter = {
   let MIN_ZOOM = 0.1;
   let SCROLL_SENSITIVITY = 0.0005;
 
+  const fontFamily = 'IBM Plex Sans';
+
+  const tailwindColors = {
+    textPrimaryone: '#F1EFEF',
+  };
+
+  const fontSizes = {
+    large: '32px',
+    fivexl: '3rem',
+  };
+
   let images = [
-    { src: './img/profileimage2.jpg', x: 100, y: 100, width: 550, height: 500 },
-    { src: './img/seto-journey.png', x: 100, y: 800, width: 1300, height: 700 },
+    { src: './img/profileimage2.jpg', x: -250, y: 50, width: 370, height: 370 },
+    { src: './img/seto-journey.png', x: 300, y: 800, width: 683, height: 384 },
   ];
 
   let loadedImages = [];
@@ -55,9 +66,24 @@ export const frontmatter = {
     );
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
-    ctx.fillStyle = '#fff';
-    drawText('Hi, This section is not ready yet', -255, -100, 32, 'courier');
-    drawText('My Project', -255, -200, 32, 'courier');
+    ctx.fillStyle = tailwindColors.textPrimaryone;
+    ctx.font = `${fontSizes.fivexl} ${fontFamily}`;
+    drawText('My Project', -255, -200);
+
+    ctx.font = `${fontSizes.large} ${fontFamily}`;
+    drawText(
+      'Hi, This section uses a Canvas to display my projects, which you can freely move around.',
+      -255,
+      -100
+    );
+    drawText('Use two fingers to zoom in and zoom out.', -255, -50);
+
+    //SORE
+    ctx.font = `${fontSizes.fivexl} ${fontFamily}`;
+    drawText('SORE. Pixel Crafters', 300, 600);
+    ctx.font = `${fontSizes.large} ${fontFamily}`;
+    drawText('SORE Pixel Crafters is a digital agency that', 300, 700);
+    drawText('specializes in UI/UX Design and Web Development.', 300, 750);
 
     // drawRect(100, 100, 250, 250, 'rgba(255, 0, 0, 0.5)');
     for (let i = 0; i < loadedImages.length; i++) {

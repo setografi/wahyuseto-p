@@ -2,7 +2,7 @@ import React from 'react';
 
 function MusicPlayerEvent() {
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center bg-[#ABC4AA] p-4">
+    <div className="flex w-full flex-col items-start justify-center bg-[#ABC4AA] p-4 md:flex-row md:items-center">
       <div className="relative h-36 w-36">
         <div className="w-fit">
           <div className="flex h-32 w-32 animate-rotate items-center justify-center rounded-full bg-[#675D50]">
@@ -20,19 +20,20 @@ function MusicPlayerEvent() {
         </div>
       </div>
 
-      <div className="mx-auto">
-        <div className="flex flex-col items-center justify-center">
-          <h2 className="text-sm font-medium">The Scientist</h2>
-          <h3 className="mb-1 text-sm">Coldplay</h3>
+      <div className="text-bodyPrimary-800 md:mx-auto">
+        <div className="flex flex-col items-start justify-center">
+          <h2 className="text-base font-medium">The Scientist</h2>
+          <h3 className="mb-1 text-base">Coldplay</h3>
         </div>
-        <div className="flex items-center justify-between space-x-4">
-          <i className="ri-volume-up-line cursor-pointer text-base"></i>
+
+        <div className="flex items-start justify-between space-x-4">
+          <i className="ri-volume-up-line cursor-pointer text-lg"></i>
           <div className="flex items-center justify-center gap-4">
-            <i className="ri-rewind-line cursor-pointer text-base"></i>
-            <i className="ri-play-line cursor-pointer text-base"></i>
-            <i className="ri-speed-line cursor-pointer text-base"></i>
+            <i className="ri-rewind-line cursor-pointer text-lg"></i>
+            <i className="ri-play-line cursor-pointer text-lg"></i>
+            <i className="ri-speed-line cursor-pointer text-lg"></i>
           </div>
-          <i className="ri-heart-3-line cursor-pointer text-base"></i>
+          <i className="ri-heart-3-line cursor-pointer text-lg"></i>
         </div>
       </div>
     </div>
