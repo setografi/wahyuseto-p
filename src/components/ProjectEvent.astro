@@ -4,7 +4,7 @@ export const frontmatter = {
 };
 ---
 
-<section id="project-section" class="h-full w-full">
+<section id="project-section" class="h-full min-w-full">
   <canvas id="canvas" class="h-full w-full bg-bodyPrimary-900"></canvas>
 </section>
 
@@ -30,8 +30,9 @@ export const frontmatter = {
   };
 
   let images = [
-    { src: './img/profileimage2.jpg', x: -250, y: 50, width: 370, height: 370 },
-    { src: './img/seto-journey.png', x: 300, y: 800, width: 683, height: 384 },
+    { src: './img/profileimage2.jpg', x: -250, y: 0, width: 370, height: 370 },
+    { src: './img/sorepixelcrafters.png', x: 300, y: 800, width: 683, height: 1252 },
+    { src: './img/gamedev-project.png', x: 1500, y: 550, width: 415, height: 415 },
   ];
 
   let loadedImages = [];
@@ -84,6 +85,12 @@ export const frontmatter = {
     ctx.font = `${fontSizes.large} ${fontFamily}`;
     drawText('SORE Pixel Crafters is a digital agency that', 300, 700);
     drawText('specializes in UI/UX Design and Web Development.', 300, 750);
+
+    //Game Dev
+    ctx.font = `${fontSizes.fivexl} ${fontFamily}`;
+    drawText('Game Dev Project', 1500, 400);
+    ctx.font = `${fontSizes.large} ${fontFamily}`;
+    drawText('Ongoing project to create a 2D game using JavaScript.', 1500, 500);
 
     // drawRect(100, 100, 250, 250, 'rgba(255, 0, 0, 0.5)');
     for (let i = 0; i < loadedImages.length; i++) {
