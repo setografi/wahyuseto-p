@@ -25,10 +25,10 @@ function JobProfile({ imageprof, job, company, bgColor, rotation }) {
       </div>
 
       <div>
-        <p className="text-sm text-textPrimary-100 md:text-base">
+        <p className="text-dark-text-primary text-sm md:text-base">
           <span>{job}</span>
         </p>
-        <p className="text-xs text-textPrimary-300 md:text-base">
+        <p className="text-dark-text-secondary text-xs md:text-sm">
           <span>{company}</span>
         </p>
       </div>

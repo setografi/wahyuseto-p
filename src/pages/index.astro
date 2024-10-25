@@ -2,11 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import HomeEvent from '../components/HomeEvent.astro';
 import ProjectEvent from '../components/ProjectEvent.astro';
-import BlogEvent from '../components/BlogEvent.astro';
+import InfoEvent from '../components/InfoEvent.astro';
 import AboutEvent from '../components/AboutEvent.astro';
 import Navbar from '../components/layout/Navbar.astro';
 import FooterEvent from '../components/layout/FooterEvent.astro';
-import NavbarEvent from '../components/layout/NavbarEvent';
 ---
 
 <Layout title="Setografi" description="setografi portfolio">
@@ -23,16 +22,20 @@ import NavbarEvent from '../components/layout/NavbarEvent';
 	</AppLoad> -->
 
   <div class="mx-auto h-dvh overflow-hidden p-6">
-    <div class="flex h-full w-full overflow-hidden border border-textPrimary-100">
-      <div class="fixed z-10 h-fit bg-transparent text-textPrimary-100">
+    <div class="border-dark-text-tertiary flex h-full w-full overflow-hidden border">
+      <div class="fixed z-10 h-fit bg-transparent">
         <Navbar />
       </div>
 
-      <div class="h-full w-full overflow-y-scroll bg-bodyPrimary-900 text-textPrimary-100">
+      <div class="bg-dark-background-primary h-full w-full overflow-y-scroll">
         <HomeEvent />
         <ProjectEvent />
-        <BlogEvent />
+        <InfoEvent />
         <AboutEvent />
+      </div>
+
+      <div class="fixed bottom-6 z-10 h-fit bg-transparent">
+        <FooterEvent />
       </div>
     </div>
   </div>

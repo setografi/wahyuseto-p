@@ -14,10 +14,10 @@ const AboutList = ({
   return (
     <section aria-labelledby={`${contenttitle}-heading`}>
       <div className="mx-auto">
-        <div className="max-w-lg text-white">
+        <div className="text-dark-text-primary max-w-lg">
           <div className="flex justify-start">
             <img
-              className="mr-4 h-9 w-9 rounded-xl bg-white p-1"
+              className="bg-light-background-primary mr-4 h-9 w-9 rounded-xl"
               src={contentimg}
               alt={contenttitle}
               loading={loading}
@@ -27,10 +27,10 @@ const AboutList = ({
                 <h2 id={`${contenttitle}-heading`} className="font-bold">
                   {contenttitle}
                 </h2>
-                <span className="ml-2 text-sm font-normal text-textPrimary-300">{subtitle}</span>
+                <span className="text-dark-text-tertiary ml-2 text-sm font-normal">{subtitle}</span>
               </div>
 
-              <p className="text-sm font-normal text-textPrimary-300 md:text-base">{content}</p>
+              <p className="text-dark-text-secondary text-sm font-normal md:text-base">{content}</p>
 
               <div className="flex items-start justify-start gap-4">
                 <button
@@ -39,9 +39,9 @@ const AboutList = ({
                   className="text-xl"
                 >
                   {isLiked ? (
-                    <i className="ri-heart-3-fill text-red-500 hover:text-textPrimary-100"></i>
+                    <i className="ri-heart-3-fill hover:text-dark-text-secondary text-red-500"></i>
                   ) : (
-                    <i className="ri-heart-3-line text-textPrimary-100 hover:text-red-500"></i>
+                    <i className="ri-heart-3-line text-dark-text-secondary hover:text-red-500"></i>
                   )}
                 </button>
 
@@ -50,7 +50,7 @@ const AboutList = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Visit ${contenttitle}`}
-                  className="text-xl text-textPrimary-100 hover:text-red-500"
+                  className="text-dark-text-secondary text-xl hover:text-red-500"
                 >
                   <i className="ri-send-plane-line"></i>
                 </a>
