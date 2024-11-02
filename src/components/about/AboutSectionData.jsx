@@ -16,14 +16,14 @@ const aboutItems = [
     content:
       'You can see me here sharing design thoughts and sometimes I tell you about my daily activities and hobbies.',
     contentimg: './skill-img/x-color.svg',
-    sociallink: 'https://twitter.com/sicalondktr',
+    sociallink: 'https://x.com/wysmooncino',
   },
   {
     contenttitle: 'LinkedIn',
     subtitle: '. 3d ago',
     content: 'See my experience and qualifications.',
     contentimg: './skill-img/linkedin-color.svg',
-    sociallink: 'https://www.linkedin.com/in/wahyu-seto-pranata-553719262',
+    sociallink: 'https://www.linkedin.com/in/setografi',
   },
   {
     contenttitle: 'read.cv',

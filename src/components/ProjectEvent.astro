@@ -5,7 +5,7 @@ export const frontmatter = {
 ---
 
 <section id="project-section" class="h-full min-w-full">
-  <canvas id="canvas" class="bg-dark-background-primary h-full w-full"></canvas>
+  <canvas id="canvas" class="h-full w-full bg-dark-background-primary"></canvas>
 </section>
 
 <script type="module">
@@ -32,9 +32,39 @@ export const frontmatter = {
   };
 
   let images = [
+    //Profile
     { src: './img/profileimage2.jpg', x: -250, y: -75, width: 370, height: 370 },
-    { src: './img/sorepixelcrafters.png', x: 300, y: 700, width: 683, height: 1252 },
-    { src: './img/gamedev-project.png', x: 1500, y: 500, width: 415, height: 415 },
+
+    //SORE
+    { src: './img/sorepixelcrafters.png', x: 300, y: 725, width: 683, height: 1252 },
+
+    //GameDev
+    { src: './img/gamedev-project.png', x: 1500, y: 475, width: 415, height: 415 },
+
+    // bwi
+    { src: './img/bwi-01.png', x: 3500, y: 475, width: 683, height: 673.5 },
+    { src: './img/bwi-02.png', x: 3500, y: 1175, width: 683, height: 673.5 },
+    { src: './img/bwi-03.png', x: 4200, y: 475, width: 683, height: 673.5 },
+    { src: './img/bwi-04.png', x: 4200, y: 1175, width: 683, height: 673.5 },
+
+    //seto-journey
+    { src: './img/seto-journey.png', x: 550, y: -750, width: 683, height: 608 },
+
+    //koefi-coffee
+    { src: './img/koefi-coffee.png', x: -850, y: -1300, width: 683, height: 522 },
+
+    //luxspace
+    { src: './img/luxspace.png', x: -2000, y: -1000, width: 720, height: 426.5 },
+
+    //beachvibe
+    { src: './img/beachvibe.png', x: -1500, y: -200, width: 512, height: 341 },
+
+    //vacation
+    { src: './img/vacation.png', x: -800, y: 800, width: 512, height: 341 },
+
+    //konten-ig
+    { src: './img/konten-ig.png', x: -1200, y: 1725, width: 227.5, height: 227.5 },
+    { src: './img/konten-ig-02.png', x: -950, y: 1725, width: 227.5, height: 227.5 },
   ];
 
   let loadedImages = [];
@@ -83,15 +113,112 @@ export const frontmatter = {
     ctx.font = `${fontSizes.text2xl} ${fontFamily}`;
     drawText('SORE. Pixel Crafters', 300, 600);
     ctx.font = `${fontSizes.textBase} ${fontFamily}`;
-    drawText('SORE Pixel Crafters is a digital agency that', 300, 650);
-    drawText('specializes in UI/UX Design and Web Development.', 300, 675);
+    drawText(
+      'SORE Pixel Crafters is a digital agency that specializes in UI/UX Design and Web Development.',
+      300,
+      650
+    );
+    drawText(
+      'Working on the frontend side and specializing in slicing designs into web applications. Worked',
+      300,
+      675
+    );
+    drawText(
+      'in a team and successfully developed a modern and responsive web application.',
+      300,
+      700
+    );
 
     //Game Dev
     ctx.font = `${fontSizes.text2xl} ${fontFamily}`;
     drawText('Game Dev Project', 1500, 400);
     ctx.font = `${fontSizes.textBase} ${fontFamily}`;
-    drawText('Ongoing project to create a', 1500, 450);
-    drawText('2D game using JavaScript.', 1500, 475);
+    drawText('Ongoing project to create a 2D game using JavaScript.', 1500, 450);
+
+    //BWI
+    ctx.font = `${fontSizes.text2xl} ${fontFamily}`;
+    drawText('Wakaf Kepri', 3500, 400);
+    ctx.font = `${fontSizes.textBase} ${fontFamily}`;
+    drawText(
+      'Landing Page of Badan Wakaf Kepulauan Riau with Admin Dashboard to manage Article posted in the website.',
+      3500,
+      450
+    );
+
+    //seto-journey
+    ctx.font = `${fontSizes.text2xl} ${fontFamily}`;
+    drawText('Seto Journey - Blog Web Applications', 550, -850);
+    ctx.font = `${fontSizes.textBase} ${fontFamily}`;
+    drawText(
+      'Setos Journey, a personal blog built using Astro. This blog serves as a platform to share my',
+      550,
+      -800
+    );
+    drawText('experiences, research, projects, and aspects of daily life.', 550, -775);
+
+    //koefi - coffee
+    ctx.font = `${fontSizes.text2xl} ${fontFamily}`;
+    drawText('Koefi Coffee Shop - Landing Page Web Applications', -850, -1375);
+    ctx.font = `${fontSizes.textBase} ${fontFamily}`;
+    drawText(
+      'Coffee Shop Web Development using React JS and Tailwind CSS from the codewithsadee project.',
+      -850,
+      -1325
+    );
+
+    //luxspace
+    ctx.font = `${fontSizes.text2xl} ${fontFamily}`;
+    drawText('Luxspace - E-Commerce Web Applications', -2000, -1100);
+    ctx.font = `${fontSizes.textBase} ${fontFamily}`;
+    drawText(
+      'Web Apps (E-Commerce) Application Development using React JS and Tailwind CSS from',
+      -2000,
+      -1050
+    );
+    drawText('the BuildWithAngga course.', -2000, -1025);
+
+    //beachvibe
+    ctx.font = `${fontSizes.text2xl} ${fontFamily}`;
+    drawText('BeachVibe - Landing Page Web Applications', -1500, -375),
+      (ctx.font = `${fontSizes.textBase} ${fontFamily}`);
+    drawText('BeachVibe, a web template for a travel-destination landing page', -1500, -325);
+    drawText(
+      'application. This project highlights the implementation of engaging image',
+      -1500,
+      -300
+    );
+    drawText('transition animations using GLSL, providing a dynamic and interactive', -1500, -275);
+    drawText('visual experience for users. BeachVibe is designed to capture visitors', -1500, -250);
+    drawText('attention and enhance engagement with vacation destination content', -1500, -225);
+
+    //vacation
+    ctx.font = `${fontSizes.text2xl} ${fontFamily}`;
+    drawText('Vacarion Site - Landing Page Web Applications', -800, 625),
+      (ctx.font = `${fontSizes.textBase} ${fontFamily}`);
+    drawText('The Vacarion Site project is a landing page web application I developed', -800, 675);
+    drawText(
+      'by converting it with Flask. While Flask is used minimally, this framework',
+      -800,
+      700
+    );
+    drawText(
+      'supports accessing the photo database for visual content. With a responsive',
+      -800,
+      725
+    );
+    drawText(
+      'and engaging design, the site provides inspiring information about various',
+      -800,
+      750
+    );
+    drawText('vacation destinations and offers an interactive user experience', -800, 775);
+
+    //konten-ig
+    ctx.font = `${fontSizes.text2xl} ${fontFamily}`;
+    drawText('Instagram Setografi Content', -1200, 1625),
+      (ctx.font = `${fontSizes.textBase} ${fontFamily}`);
+    drawText('I am designing typographic content for my personal', -1200, 1675);
+    drawText('Instagram account called "Setografi.', -1200, 1700);
 
     // drawRect(100, 100, 250, 250, 'rgba(255, 0, 0, 0.5)');
     for (let i = 0; i < loadedImages.length; i++) {
