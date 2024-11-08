@@ -4,7 +4,7 @@ import AboutList from './AboutList';
 const aboutItems = [
   {
     contenttitle: 'Instagram',
-    subtitle: '. Just now',
+    subtitle: '. 1m ago',
     content:
       'My other skills? you can visit my Instagram. You can see Instagram Typography content and some of my Photography Collections.',
     contentimg: './skill-img/instagram-color.svg',
@@ -12,7 +12,7 @@ const aboutItems = [
   },
   {
     contenttitle: 'Twitter',
-    subtitle: '. 1m ago',
+    subtitle: '. 5m ago',
     content:
       'You can see me here sharing design thoughts and sometimes I tell you about my daily activities and hobbies.',
     contentimg: './skill-img/x-color.svg',
