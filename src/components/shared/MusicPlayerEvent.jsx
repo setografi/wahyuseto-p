@@ -2,7 +2,7 @@ import React from 'react';
 
 function MusicPlayerEvent() {
   return (
-    <div className="flex w-full flex-col items-center justify-center rounded bg-dark-background-secondary p-4 md:flex-row">
+    <div className="flex h-fit w-full flex-col items-center justify-center rounded bg-dark-background-secondary p-4 md:flex-row">
       <div className="relative h-36 w-36">
         <div className="w-fit">
           <div className="flex h-32 w-32 animate-rotate items-center justify-center rounded-full bg-dark-background-tertiary">

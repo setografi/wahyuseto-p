@@ -1,5 +1,4 @@
 ---
-import JobTag from './experience/JobTag.astro';
 import MusicPlayerEvent from './shared/MusicPlayerEvent.jsx';
 import ProgressEvent from './shared/ProgressEvent.astro';
 
@@ -15,11 +14,8 @@ export const frontmatter = {
     Info
   </h1> -->
 
-  <div class="grid h-full w-full justify-end">
-    <div class="grid max-w-lg grid-cols-1 gap-3 md:gap-5">
-      <JobTag />
-      <MusicPlayerEvent />
-      <ProgressEvent />
-    </div>
+  <div class="flex h-full max-w-lg flex-col justify-end gap-3 md:gap-5">
+    <MusicPlayerEvent />
+    <ProgressEvent />
   </div>
 </section>

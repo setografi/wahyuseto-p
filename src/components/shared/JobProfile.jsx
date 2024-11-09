@@ -2,7 +2,7 @@ import React from 'react';
 
 function JobProfile({ imageprof, job, company, bgColor, rotation }) {
   return (
-    <div className="flex items-center justify-start gap-4 p-2">
+    <div className="grid grid-flow-col items-center justify-start gap-4 p-2">
       <div
         className="flex h-10 w-8 items-center justify-center rounded p-1"
         style={{
@@ -25,10 +25,10 @@ function JobProfile({ imageprof, job, company, bgColor, rotation }) {
       </div>
 
       <div>
-        <p className="text-dark-text-primary text-sm md:text-base">
+        <p className="text-sm text-dark-text-primary md:text-base">
           <span>{job}</span>
         </p>
-        <p className="text-dark-text-secondary text-xs md:text-sm">
+        <p className="text-xs text-dark-text-secondary md:text-sm">
           <span>{company}</span>
         </p>
       </div>
