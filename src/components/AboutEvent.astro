@@ -121,12 +121,13 @@ export const frontmatter = {
         </div>
 
         <div class="flex items-start justify-start gap-4">
-          <button id="like-button" class="text-xl hover:text-red-500">
-            <i id="heart-icon" class="ri-heart-3-line"></i>
+          <button id="like-button" class="text-xl">
+            <i id="heart-icon" class="ri-heart-3-line text-dark-text-secondary hover:text-red-500"
+            ></i>
           </button>
 
           <a
-            class="text-xl hover:text-red-500"
+            class="text-xl text-dark-text-secondary hover:text-red-500"
             href="https://setojourney.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
@@ -145,14 +146,25 @@ export const frontmatter = {
 <script>
   const likeButton = document.getElementById('like-button');
   const heartIcon = document.getElementById('heart-icon');
+  let isLiked = false;
 
   likeButton.addEventListener('click', () => {
-    if (heartIcon.classList.contains('ri-heart-3-line')) {
-      heartIcon.classList.remove('ri-heart-3-line');
-      heartIcon.classList.add('ri-heart-3-fill', 'text-red-500', 'hover:text-textPrimary-100');
+    isLiked = !isLiked;
+
+    if (isLiked) {
+      heartIcon.classList.remove(
+        'ri-heart-3-line',
+        'text-dark-text-secondary',
+        'hover:text-red-500'
+      );
+      heartIcon.classList.add('ri-heart-3-fill', 'text-red-500', 'hover:text-dark-text-secondary');
     } else {
-      heartIcon.classList.remove('ri-heart-3-fill', 'text-red-500', 'hover:text-textPrimary-100');
-      heartIcon.classList.add('ri-heart-3-line');
+      heartIcon.classList.remove(
+        'ri-heart-3-fill',
+        'text-red-500',
+        'hover:text-dark-text-secondary'
+      );
+      heartIcon.classList.add('ri-heart-3-line', 'text-dark-text-secondary', 'hover:text-red-500');
     }
   });
 </script>

@@ -5,31 +5,33 @@
 <nav class="w-full p-2 md:p-4">
   <ul class="flex flex-col items-start justify-start md:gap-2">
     <button
-      class="text-dark-text-primary hover:text-accent-magenta-600 w-full cursor-pointer text-start font-ibmPlexsans text-sm md:text-base"
       data-section="home"
+      class="w-full cursor-pointer text-start font-ibmPlexsans text-sm text-dark-text-primary hover:text-accent-magenta-600 md:text-base"
     >
-      Home
+      <span>Home</span>
     </button>
 
     <button
-      class="text-dark-text-primary hover:text-accent-magenta-600 w-full cursor-pointer text-start font-ibmPlexsans text-sm md:text-base"
       data-section="project"
+      class="w-full cursor-pointer text-start font-ibmPlexsans text-sm text-dark-text-primary hover:text-accent-magenta-600 md:text-base"
     >
-      Projects
+      <span>Projects</span>
     </button>
 
     <button
-      class="text-dark-text-primary hover:text-accent-magenta-600 w-full cursor-pointer text-start font-ibmPlexsans text-sm md:text-base"
+      id="info-button"
       data-section="info"
+      class="w-full cursor-pointer text-start font-ibmPlexsans text-sm text-dark-text-primary hover:text-accent-magenta-600 md:text-base"
     >
-      Info
+      <span>Info</span>
+      <i id="info-icon" class="ri-music-2-line"></i>
     </button>
 
     <button
-      class="text-dark-text-primary hover:text-accent-magenta-600 w-full cursor-pointer text-start font-ibmPlexsans text-sm md:text-base"
       data-section="about"
+      class="w-full cursor-pointer text-start font-ibmPlexsans text-sm text-dark-text-primary hover:text-accent-magenta-600 md:text-base"
     >
-      About
+      <span>About</span>
     </button>
   </ul>
 </nav>
@@ -44,25 +46,53 @@
       about: document.getElementById('about-section'),
     };
 
+    // Keep track of the active bullet point element
+    let activeBullet = null;
+
     buttons.forEach((button) => {
       button.addEventListener('click', () => {
         const section = button.getAttribute('data-section');
-        Object.keys(sections).forEach((key) => {
-          if (key === section) {
-            sections[key].style.display = 'block';
-          } else {
-            sections[key].style.display = 'none';
+
+        buttons.forEach((btn) => {
+          const icon = btn.querySelector('i');
+          if (icon) {
+            icon.className = btn.getAttribute('data-section') === 'info' ? 'ri-music-2-line' : ''; // Reset icons
+            icon.textContent = ''; // Reset text content
           }
+          btn.classList.remove('active'); // Reset active class
+
+          // Remove any previously added bullet point from other buttons
+          const existingBullet = btn.querySelector('.bullet-point');
+          if (existingBullet) {
+            existingBullet.remove();
+          }
+        });
+
+        // Set active icon or bullet point for Info button
+        if (section === 'info') {
+          const infoIcon = document.getElementById('info-icon');
+          infoIcon.className = ''; // Remove music icon class
+          infoIcon.textContent = '•'; // Add bullet point
+        } else {
+          // Add bullet point for the selected section
+          const bullet = document.createElement('span');
+          bullet.textContent = '•';
+          bullet.className = 'bullet-point text-dark-text-primary';
+          button.appendChild(bullet);
+
+          // Track the active bullet point for removal on next button click
+          activeBullet = bullet;
+        }
+
+        Object.keys(sections).forEach((key) => {
+          sections[key].style.display = key === section ? 'block' : 'none';
         });
       });
     });
 
+    // Set the initial display for sections
     Object.keys(sections).forEach((key) => {
-      if (key === 'home') {
-        sections[key].style.display = 'block';
-      } else {
-        sections[key].style.display = 'none';
-      }
+      sections[key].style.display = key === 'home' ? 'block' : 'none';
     });
   });
 </script>

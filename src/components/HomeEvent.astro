@@ -136,7 +136,7 @@
     ctx.canvas.height = canvas.height;
     const fontSize = Math.min(canvas.width / 8, canvas.height / 8);
     ctx.font = `900 ${fontSize}px IBM Plex Sans`;
-    ctx.fillStyle = 'white';
+    ctx.fillStyle = '#FFFFFF';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(text, canvas.width / 2, canvas.height / 2);
@@ -270,7 +270,8 @@
     nextTextTimeout = setTimeout(changeText, config.textChangeInterval);
   }
 
-  gl.clearColor(0, 0, 0, 1);
+  // gl.clearColor(0, 0, 0, 1);
+  gl.clearColor(18 / 255, 18 / 255, 18 / 255, 1);
   createParticles();
   animate();
   nextTextTimeout = setTimeout(changeText, config.textChangeInterval);

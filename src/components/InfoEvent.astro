@@ -7,15 +7,11 @@ export const frontmatter = {
 };
 ---
 
-<section id="info-section" class="mb-6 mt-36 h-full w-full p-2 md:mb-10 md:mt-0 md:p-4">
-  <!-- <h1
-    class="mb-6 text-left font-silkScreen text-3xl text-dark-text-primary md:mb-3 md:text-right lg:text-5xl"
-  >
-    Info
-  </h1> -->
-
-  <div class="flex h-full max-w-lg flex-col justify-end gap-3 md:gap-5">
-    <MusicPlayerEvent />
-    <ProgressEvent />
+<section id="info-section" class="mb-6 mt-36 h-full w-full p-2 md:mb-8 md:mt-0 md:p-4">
+  <div class="flex h-full w-full justify-end">
+    <div class="flex max-w-lg flex-col justify-end gap-3 md:gap-5">
+      <MusicPlayerEvent client:load />
+      <ProgressEvent />
+    </div>
   </div>
 </section>

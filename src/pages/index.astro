@@ -9,25 +9,13 @@ import FooterEvent from '../components/layout/FooterEvent.astro';
 ---
 
 <Layout title="Setografi" description="setografi portfolio">
-  <!-- <AppLoad client:only="react">
-		<div slot="projectSlot">
-		  <ProjectEvent />
-		</div>
-		<div slot="blogSlot">
-			<BlogEvent />
-		</div>
-		<div slot="aboutSlot">
-			<AboutEvent />
-		</div>
-	</AppLoad> -->
-
   <div class="mx-auto h-dvh overflow-hidden p-6">
-    <div class="border-dark-text-tertiary flex h-full w-full overflow-hidden border">
+    <div class="flex h-full w-full overflow-hidden border border-dark-text-tertiary">
       <div class="fixed z-10 h-fit bg-transparent">
         <Navbar />
       </div>
 
-      <div class="bg-dark-background-primary h-full w-full overflow-y-scroll">
+      <div class="h-full w-full overflow-y-scroll bg-dark-background-primary">
         <HomeEvent />
         <ProjectEvent />
         <InfoEvent />

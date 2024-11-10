@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 function MusicPlayerEvent() {
+  const [isPlaying, setIsPlaying] = useState(true); // Music starts playing by default
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    // Play the audio when the component is mounted
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  }, []);
+
+  const togglePlayPause = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying); // Toggle the play state
+  };
+
   return (
     <div className="flex h-fit w-full flex-col items-center justify-center rounded bg-dark-background-secondary p-4 md:flex-row">
+      <audio ref={audioRef} src="/music/mixkit-fun-jazz-647.mp3" loop />
+
       <div className="relative h-36 w-36">
         <div className="w-fit">
           <div className="flex h-32 w-32 animate-rotate items-center justify-center rounded-full bg-dark-background-tertiary">
@@ -22,18 +43,23 @@ function MusicPlayerEvent() {
 
       <div className="text-dark-text-primary md:mx-auto">
         <div className="flex flex-col items-start justify-center">
-          <h2 className="text-base font-medium">The Scientist</h2>
-          <h3 className="mb-1 text-base hover:underline">Coldplay</h3>
+          <h2 className="text-base font-medium">Fun Jazz</h2>
+          <h3 className="mb-1 text-base hover:underline">Francisco Alvear</h3>
         </div>
 
         <div className="flex items-start justify-between space-x-4">
-          <i className="ri-volume-up-line cursor-pointer text-lg hover:text-light-text-primary"></i>
+          <i className="ri-volume-up-line cursor-not-allowed text-lg text-dark-text-tertiary"></i>
           <div className="flex items-center justify-center gap-4">
-            <i className="ri-rewind-line cursor-pointer text-lg hover:text-light-text-primary"></i>
-            <i className="ri-play-line cursor-pointer text-lg hover:text-light-text-primary"></i>
-            <i className="ri-speed-line cursor-pointer text-lg hover:text-light-text-primary"></i>
+            <i className="ri-rewind-line cursor-pointer text-lg hover:text-dark-text-secondary"></i>
+            <i
+              className={`${
+                isPlaying ? 'ri-pause-line' : 'ri-play-line'
+              } cursor-pointer text-lg hover:text-dark-text-secondary`}
+              onClick={togglePlayPause}
+            ></i>
+            <i className="ri-speed-line cursor-pointer text-lg hover:text-dark-text-secondary"></i>
           </div>
-          <i className="ri-heart-3-line cursor-pointer text-lg hover:text-light-text-primary"></i>
+          <i className="ri-heart-3-fill cursor-pointer text-lg text-red-500"></i>
         </div>
       </div>
     </div>
