@@ -1,15 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 function MusicPlayerEvent() {
-  const [isPlaying, setIsPlaying] = useState(true); // Music starts playing by default
+  const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
-
-  useEffect(() => {
-    // Play the audio when the component is mounted
-    if (audioRef.current) {
-      audioRef.current.play();
-    }
-  }, []);
 
   const togglePlayPause = () => {
     if (isPlaying) {
@@ -17,7 +10,7 @@ function MusicPlayerEvent() {
     } else {
       audioRef.current.play();
     }
-    setIsPlaying(!isPlaying); // Toggle the play state
+    setIsPlaying(!isPlaying);
   };
 
   return (

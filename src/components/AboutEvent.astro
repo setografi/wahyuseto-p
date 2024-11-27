@@ -1,10 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import AboutSectionData from './about/AboutSectionData.jsx';
-import JobTag from './experience/JobTag.astro';
+import JobTag from './shared/JobTag.astro';
 
 import ProfileImage from '../assets/images/profileimage2.jpg';
-import Blog01 from '../assets/images/seto-journey.png';
 
 export const frontmatter = {
   title: 'About',
@@ -12,159 +11,38 @@ export const frontmatter = {
 ---
 
 <section id="about-section" class="mt-36 h-full w-full p-2 md:mt-0 md:p-4">
-  <!-- <h1
-    class="mb-6 text-left font-silkScreen text-3xl text-dark-text-primary md:mb-3 md:text-right lg:text-5xl"
-  >
-    About Me
-  </h1> -->
+  <div class="grid h-full w-full grid-flow-row justify-center gap-6 md:justify-end">
+    <div class="flex max-w-lg flex-col justify-end gap-4">
+      <h2 class="text-base font-bold text-dark-text-primary">Hi, I'm Wahyu Seto Pranata</h2>
 
-  <div class="grid grid-flow-row justify-end gap-8">
-    <div class="flex w-full max-w-lg justify-start text-dark-text-primary">
-      <Image
-        src={ProfileImage}
-        width={2730}
-        height={2730}
-        alt="Wahyu Seto Pranata"
-        loading="eager"
-        class="mr-4 h-9 w-9 rounded-xl bg-light-background-primary object-cover p-1"
-      />
-      <div class="flex flex-col gap-2">
-        <div class="flex flex-col justify-start gap-1 md:flex-row md:justify-between">
-          <div class="inline-flex items-end justify-start text-base">
-            <h2 class="mr-2 font-bold">Setografi</h2><i
-              class="ri-verified-badge-fill mr-2 text-accent-cyan-600"></i>
-            <span class="text-sm font-normal text-dark-text-tertiary">. Just now</span>
-          </div>
-
-          <div class="inline-flex items-start text-dark-text-tertiary md:items-end">
-            <i class="ri-map-pin-2-line mr-2"></i>
-            <p class="text-sm">Kepulauan Riau, Indonesia</p>
-          </div>
-        </div>
-
+      <div class="flex flex-col space-y-4">
         <p class="text-sm font-normal text-dark-text-secondary md:text-base">
-          Hello, I'm <span class="font-bold text-dark-text-primary">Wahyu Seto Pranata</span>, a
-          unique creative <span class="font-bold text-dark-text-primary">Designer</span> and <span
-            class="font-bold text-dark-text-primary">Developer</span
-          >
-          who spends much of his free time drinking coffee and traveling. I like learning new things
-          and trying to apply them.
+          Someone who spends a lot of leisure time enjoying restful sleep and a warm cup of coffee.
+          In between, I enjoy learning new things and trying them out. From this habit, I have
+          gained experience in the fields of Design and Development.
         </p>
 
-        <JobTag />
+        <p class="text-sm font-normal text-dark-text-secondary md:text-base">
+          I started my career as a Graphic Designer and later transitioned to a Frontend Developer.
+          Although these two fields are different, my design knowledge and experience have greatly
+          helped me in building applications with unique designs and UI that reflect my personal
+          style.
+        </p>
 
-        <div class="my-2 overflow-hidden rounded-xl">
-          <Image
-            src={ProfileImage}
-            width={2730}
-            height={2730}
-            alt="Blog 01"
-            loading="eager"
-            class="h-48 w-full object-cover md:h-64"
-          />
-        </div>
+        <p class="text-sm font-normal text-dark-text-secondary md:text-base">
+          Additionally, I enjoy writing blogs to share the knowledge I’ve gained and the experiences
+          I’ve had.
+        </p>
 
-        <div class="flex flex-col items-start justify-start gap-2 md:flex-row">
-          <div
-            class="inline-flex items-center gap-2 rounded-full bg-light-background-primary px-3 py-1 text-base text-light-text-primary md:text-xl"
-          >
-            <span class="animate-pulse text-green-500 duration-300">•</span>
-            <p class="font-ibmPlexsans text-sm font-bold">Available for work</p>
-          </div>
-
-          <div class="flex gap-2">
-            <a
-              href="mailto:wahyusetotkrx18@gmail"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Email me"
-              class="inline-flex items-center justify-center gap-2 rounded-full bg-light-background-primary px-3 py-1 text-base text-light-text-primary transition duration-300 ease-in hover:bg-dark-background-tertiary hover:text-dark-text-primary md:text-xl"
-            >
-              <p class="font-ibmPlexsans text-sm font-bold">Say hi</p>
-              <i class="ri-mail-line"></i>
-            </a>
-          </div>
-        </div>
+        <p class="text-sm font-normal text-dark-text-secondary md:text-base">
+          I also have a hobby in photography and creating typography content on Instagram, which I
+          often post on my Instagram account.
+        </p>
       </div>
     </div>
 
-    <div class="flex w-full max-w-lg justify-start text-dark-text-primary">
-      <Image
-        src={ProfileImage}
-        width={2730}
-        height={2730}
-        alt="Wahyu Seto Pranata"
-        loading="eager"
-        class="mr-4 h-9 w-9 rounded-xl bg-light-background-primary object-cover p-1"
-      />
-      <div class="flex flex-col gap-2">
-        <div class="flex flex-row items-end justify-start gap-2 text-base">
-          <h2 class="font-bold">Setografi</h2><i
-            class="ri-verified-badge-fill mr-2 text-accent-cyan-600"></i>
-          <span class="text-sm font-normal text-dark-text-tertiary">. 30s ago</span>
-        </div>
-
-        <p class="text-sm font-normal text-dark-text-secondary md:text-base">
-          I've been writing several blog posts lately on my personal blog. You can visit it if
-          you're interested!
-        </p>
-
-        <div class="my-2 overflow-hidden rounded-xl">
-          <Image
-            src={Blog01}
-            width={1366}
-            height={715}
-            alt="Blog 01"
-            loading="eager"
-            class="h-48 w-full object-cover md:h-64"
-          />
-        </div>
-
-        <div class="flex items-start justify-start gap-4">
-          <button id="like-button" class="text-xl">
-            <i id="heart-icon" class="ri-heart-3-line text-dark-text-secondary hover:text-red-500"
-            ></i>
-          </button>
-
-          <a
-            class="text-xl text-dark-text-secondary hover:text-red-500"
-            href="https://setojourney.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit Seto Journey Website"
-          >
-            <i class="ri-send-plane-line"></i>
-          </a>
-        </div>
-      </div>
+    <div class="flex max-w-lg flex-col justify-end gap-4">
+      <JobTag />
     </div>
-
-    <AboutSectionData client:load />
   </div>
 </section>
-
-<script>
-  const likeButton = document.getElementById('like-button');
-  const heartIcon = document.getElementById('heart-icon');
-  let isLiked = false;
-
-  likeButton.addEventListener('click', () => {
-    isLiked = !isLiked;
-
-    if (isLiked) {
-      heartIcon.classList.remove(
-        'ri-heart-3-line',
-        'text-dark-text-secondary',
-        'hover:text-red-500'
-      );
-      heartIcon.classList.add('ri-heart-3-fill', 'text-red-500', 'hover:text-dark-text-secondary');
-    } else {
-      heartIcon.classList.remove(
-        'ri-heart-3-fill',
-        'text-red-500',
-        'hover:text-dark-text-secondary'
-      );
-      heartIcon.classList.add('ri-heart-3-line', 'text-dark-text-secondary', 'hover:text-red-500');
-    }
-  });
-</script>
