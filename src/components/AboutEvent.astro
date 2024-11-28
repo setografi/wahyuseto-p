@@ -1,48 +1,84 @@
 ---
-import { Image } from 'astro:assets';
-import AboutSectionData from './about/AboutSectionData.jsx';
-import JobTag from './shared/JobTag.astro';
-
-import ProfileImage from '../assets/images/profileimage2.jpg';
+import JobList from './shared/JobList.astro';
 
 export const frontmatter = {
   title: 'About',
 };
+
+const jobItems = [
+  {
+    imageprof: '/img/logo-SORE.svg',
+    job: 'Frontend Developer',
+    company: 'SORE. Pixel Crafters • Jul 2023 - Now',
+    bgColor: '#ffffff',
+    rotation: '-10deg',
+  },
+
+  {
+    job: 'Graphic Designer and Social Media Staff',
+    company: 'Maritim Muda Nusantara • Feb 2023 - Jun 2023',
+    bgColor: '#12aec7',
+    rotation: '10deg',
+  },
+];
 ---
 
-<section id="about-section" class="mt-36 h-full w-full p-2 md:mt-0 md:p-4">
-  <div class="grid h-full w-full grid-flow-row justify-center gap-6 md:justify-end">
-    <div class="flex max-w-lg flex-col justify-end gap-4">
-      <h2 class="text-base font-bold text-dark-text-primary">Hi, I'm Wahyu Seto Pranata</h2>
+<section id="about-section" class="mt-24 min-h-dvh w-full p-2 md:mt-0 md:p-4">
+  <div
+    class="flex h-full w-full flex-col items-center justify-end gap-4 md:items-end md:justify-start"
+  >
+    <div
+      class="flex max-w-lg flex-col gap-4 rounded-lg border border-light-background-primary/20 bg-light-background-primary/10 p-6 shadow-lg backdrop-blur-2xl"
+    >
+      <h2 class="mb-2 font-ibmPlexsans text-base font-bold text-dark-text-primary">
+        Hi, I'm Wahyu Seto Pranata
+      </h2>
 
       <div class="flex flex-col space-y-4">
-        <p class="text-sm font-normal text-dark-text-secondary md:text-base">
+        <p class="text-sm font-normal text-dark-text-primary md:text-base">
           Someone who spends a lot of leisure time enjoying restful sleep and a warm cup of coffee.
           In between, I enjoy learning new things and trying them out. From this habit, I have
           gained experience in the fields of Design and Development.
         </p>
 
-        <p class="text-sm font-normal text-dark-text-secondary md:text-base">
+        <p class="text-sm font-normal text-dark-text-primary md:text-base">
           I started my career as a Graphic Designer and later transitioned to a Frontend Developer.
           Although these two fields are different, my design knowledge and experience have greatly
           helped me in building applications with unique designs and UI that reflect my personal
           style.
         </p>
 
-        <p class="text-sm font-normal text-dark-text-secondary md:text-base">
+        <p class="text-sm font-normal text-dark-text-primary md:text-base">
           Additionally, I enjoy writing blogs to share the knowledge I’ve gained and the experiences
           I’ve had.
         </p>
 
-        <p class="text-sm font-normal text-dark-text-secondary md:text-base">
+        <p class="text-sm font-normal text-dark-text-primary md:text-base">
           I also have a hobby in photography and creating typography content on Instagram, which I
           often post on my Instagram account.
         </p>
       </div>
     </div>
 
-    <div class="flex max-w-lg flex-col justify-end gap-4">
-      <JobTag />
+    <div
+      class="flex max-w-lg flex-col rounded-lg border border-light-background-primary/20 bg-light-background-primary/10 p-4 shadow-lg backdrop-blur-2xl"
+    >
+      <h2 class="mb-2 font-ibmPlexsans text-base font-bold text-dark-text-primary">Experience</h2>
+      {
+        jobItems.map((item) => {
+          return (
+            <div class="w-full md:max-w-fit">
+              <JobList
+                imageprof={item.imageprof}
+                job={item.job}
+                company={item.company}
+                bgColor={item.bgColor}
+                rotation={item.rotation}
+              />
+            </div>
+          );
+        })
+      }
     </div>
   </div>
 </section>

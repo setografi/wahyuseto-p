@@ -1,0 +1,42 @@
+---
+interface Props {
+  imageprof?: string;
+  job: string;
+  company: string;
+  bgColor: string;
+  rotation?: string;
+}
+
+const { imageprof, job, company, bgColor, rotation } = Astro.props;
+---
+
+<div class="grid grid-flow-col items-center justify-start gap-4 p-2">
+  <div
+    class="flex h-10 w-8 items-center justify-center rounded p-1"
+    style={`background-color: ${bgColor}; transform: rotate(${rotation || '0deg'});`}
+  >
+    {
+      imageprof ? (
+        <img
+          src={imageprof}
+          alt={company}
+          width={40}
+          height={40}
+          class="h-10 w-10 object-center"
+          loading="lazy"
+        />
+      ) : (
+        <div class="flex h-10 w-10 items-center justify-center rounded" />
+      )
+    }
+  </div>
+
+  <div>
+    <p class="text-sm text-dark-text-primary md:text-base">
+      <span>{job}</span>
+    </p>
+    <p class="text-xs text-dark-text-secondary md:text-sm">
+      <span>{company}</span>
+    </p>
+  </div>
+</div>

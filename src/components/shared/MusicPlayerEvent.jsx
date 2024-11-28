@@ -14,7 +14,7 @@ function MusicPlayerEvent() {
   };
 
   return (
-    <div className="flex h-fit w-full flex-col items-center justify-center rounded bg-dark-background-secondary p-4 md:flex-row">
+    <div className="flex h-fit w-full flex-col items-center justify-center rounded-lg border border-light-background-primary/20 bg-light-background-primary/10 p-4 shadow-lg backdrop-blur-2xl md:flex-row">
       <audio ref={audioRef} src="/music/mixkit-fun-jazz-647.mp3" loop />
 
       <div className="relative h-36 w-36">
