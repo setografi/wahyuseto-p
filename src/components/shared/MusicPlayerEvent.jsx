@@ -14,13 +14,13 @@ function MusicPlayerEvent() {
   };
 
   return (
-    <div className="flex h-fit w-full flex-col items-center justify-center rounded-lg border border-light-background-primary/20 bg-light-background-primary/10 p-4 shadow-lg backdrop-blur-2xl md:flex-row">
+    <div className="glassmorphism border-border-100 flex h-fit w-full flex-col items-center justify-center rounded-lg border p-4 backdrop-blur-2xl md:flex-row">
       <audio ref={audioRef} src="/music/mixkit-fun-jazz-647.mp3" loop />
 
       <div className="relative h-36 w-36">
         <div className="w-fit">
-          <div className="flex h-32 w-32 animate-rotate items-center justify-center rounded-full bg-dark-background-tertiary">
-            <div className="flex h-20 w-20 items-center justify-center rounded-full border-x-2 border-y-2 border-x-dark-background-tertiary border-y-dark-text-primary">
+          <div className="flex h-32 w-32 animate-rotate items-center justify-center rounded-full bg-dark-background-secondary">
+            <div className="flex h-20 w-20 items-center justify-center rounded-full border-x-2 border-y-2 border-x-dark-background-secondary border-y-dark-text-primary">
               <div className="flex h-14 w-14 items-center justify-center rounded-full bg-dark-text-primary">
                 <div className="h-4 w-4 rounded-full bg-dark-background-secondary"></div>
               </div>
@@ -43,16 +43,16 @@ function MusicPlayerEvent() {
         <div className="flex items-start justify-between space-x-4">
           <i className="ri-volume-up-line cursor-not-allowed text-lg text-dark-text-tertiary"></i>
           <div className="flex items-center justify-center gap-4">
-            <i className="ri-rewind-line cursor-pointer text-lg hover:text-dark-text-secondary"></i>
+            <i className="ri-rewind-line cursor-pointer text-lg transition-colors duration-500 hover:text-dark-text-secondary"></i>
             <i
               className={`${
                 isPlaying ? 'ri-pause-line' : 'ri-play-line'
-              } cursor-pointer text-lg hover:text-dark-text-secondary`}
+              } cursor-pointer text-lg transition-colors duration-500 hover:text-dark-text-secondary`}
               onClick={togglePlayPause}
             ></i>
-            <i className="ri-speed-line cursor-pointer text-lg hover:text-dark-text-secondary"></i>
+            <i className="ri-speed-line cursor-pointer text-lg transition-colors duration-500 hover:text-dark-text-secondary"></i>
           </div>
-          <i className="ri-heart-3-fill cursor-pointer text-lg text-red-500"></i>
+          <i className="ri-heart-3-fill cursor-pointer text-lg text-accent-magenta-600 transition-colors duration-500"></i>
         </div>
       </div>
     </div>

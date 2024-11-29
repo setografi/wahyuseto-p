@@ -6,14 +6,14 @@
   <ul class="flex flex-col items-start justify-start md:gap-2">
     <button
       data-section="home"
-      class="w-full cursor-pointer text-start font-ibmPlexsans text-sm text-dark-text-primary hover:text-accent-magenta-600 md:text-base"
+      class="hover:text-accent-purple-500 w-full cursor-pointer text-start font-ibmPlexsans text-sm text-neutral-100 transition-colors duration-500 md:text-base"
     >
       <span>Home</span>
     </button>
 
     <button
       data-section="project"
-      class="w-full cursor-pointer text-start font-ibmPlexsans text-sm text-dark-text-primary hover:text-accent-magenta-600 md:text-base"
+      class="hover:text-accent-purple-500 w-full cursor-pointer text-start font-ibmPlexsans text-sm text-neutral-100 transition-colors duration-500 md:text-base"
     >
       <span>Projects</span>
     </button>
@@ -21,7 +21,7 @@
     <button
       id="info-button"
       data-section="info"
-      class="w-full cursor-pointer text-start font-ibmPlexsans text-sm text-dark-text-primary hover:text-accent-magenta-600 md:text-base"
+      class="hover:text-accent-purple-500 w-full cursor-pointer text-start font-ibmPlexsans text-sm text-neutral-100 transition-colors duration-500 md:text-base"
     >
       <span>Info</span>
       <i id="info-icon" class="ri-music-2-line"></i>
@@ -29,7 +29,7 @@
 
     <button
       data-section="about"
-      class="w-full cursor-pointer text-start font-ibmPlexsans text-sm text-dark-text-primary hover:text-accent-magenta-600 md:text-base"
+      class="hover:text-accent-purple-500 w-full cursor-pointer text-start font-ibmPlexsans text-sm text-neutral-100 transition-colors duration-500 md:text-base"
     >
       <span>About</span>
     </button>
@@ -77,7 +77,7 @@
           // Add bullet point for the selected section
           const bullet = document.createElement('span');
           bullet.textContent = '•';
-          bullet.className = 'bullet-point text-dark-text-primary';
+          bullet.className = 'bullet-point text-neutral-100';
           button.appendChild(bullet);
 
           // Track the active bullet point for removal on next button click

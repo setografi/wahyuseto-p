@@ -4,6 +4,22 @@ export default {
   theme: {
     extend: {
       colors: {
+        neutral: {
+          100: '#FFFFFF',
+          200: '#F5F5F5',
+          300: '#E0E0E0',
+          400: '#BDBDBD',
+          500: '#9E9E9E',
+          600: '#757575',
+          700: '#424242',
+          800: '#1E1E1E',
+          900: '#0A0A0A',
+        },
+        border: {
+          100: '#E0E0E0',
+          200: '#757575',
+          300: '#424242',
+        },
         light: {
           background: {
             primary: '#FFFFFF',
@@ -37,6 +53,28 @@ export default {
           },
         },
         accent: {
+          purple: {
+            100: '#F3E5F5',
+            200: '#E1BEE7',
+            300: '#CE93D8',
+            400: '#BA68C8',
+            500: '#AB47BC',
+            600: '#9C27B0',
+            700: '#8E24AA',
+            800: '#7B1FA2',
+            900: '#4A148C',
+          },
+          lavender: {
+            100: '#E6E6FA',
+            200: '#D8BFD8',
+            300: '#DDA0DD',
+            400: '#DA70D6',
+            500: '#BA55D3',
+            600: '#9932CC',
+            700: '#8A2BE2',
+            800: '#6A5ACD',
+            900: '#483D8B',
+          },
           magenta: {
             600: '#E91E63',
             500: '#D81B60',
@@ -54,7 +92,6 @@ export default {
           },
         },
       },
-
       fontFamily: {
         ibmPlexsans: ['IBM Plex Sans', 'sans-serif'],
         ibmPlexmono: ['IBM Plex Mono', 'monospace'],

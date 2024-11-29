@@ -19,10 +19,13 @@ body {
   display: none !important;
 }
 
-.glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.glassmorphism {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 30, 0.4) /* neutral 800 */,
+    rgba(66, 66, 66, 0.2) /* neutral 700 */
+  );
+  box-shadow:
+    0 0 10px rgba(171, 71, 188, 0.4) /* Purple glow */,
+    0 0 20px rgba(206, 153, 242, 0.3); /* Lavender soft glow */
 }

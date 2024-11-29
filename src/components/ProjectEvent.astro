@@ -5,7 +5,7 @@ export const frontmatter = {
 ---
 
 <section id="project-section" class="h-full min-w-full">
-  <canvas id="canvas" class="h-full w-full bg-dark-background-primary"></canvas>
+  <canvas id="canvas" class="h-full w-full bg-neutral-900/90"></canvas>
 </section>
 
 <script type="module">
@@ -22,7 +22,7 @@ export const frontmatter = {
 
   const tailwindColors = {
     textPrimary: '#FFFFFF',
-    textSecondary: '#F8F9FA',
+    textSecondary: '#E0E0E0',
   };
 
   const fontSizes = {
@@ -105,9 +105,17 @@ export const frontmatter = {
 
     ctx.fillStyle = tailwindColors.textSecondary;
     ctx.font = `${fontSizes.textBase} ${fontFamily}`;
-    drawText('This section uses a Canvas to display my projects,', -250, -150);
-    drawText('which you can freely move around. Use two fingers to', -250, -125);
-    drawText('zoom in and zoom out. Enjoy!', -250, -100);
+    drawText(
+      'This section showcases my projects using a Canvas that you can freely explore.',
+      -250,
+      -150
+    );
+    drawText(
+      'To zoom in and out, simply scroll on desktop or pinch with two fingers on mobile.',
+      -250,
+      -125
+    );
+    drawText('Enjoy!', -250, -100);
 
     //SORE
     ctx.font = `${fontSizes.text2xl} ${fontFamily}`;
