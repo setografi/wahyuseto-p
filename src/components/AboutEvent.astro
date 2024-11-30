@@ -1,5 +1,6 @@
 ---
 import JobList from './shared/JobList.astro';
+import SocialIcons from './shared/SocialIcons.astro';
 
 export const frontmatter = {
   title: 'About',
@@ -21,6 +22,33 @@ const jobItems = [
     rotation: '10deg',
   },
 ];
+
+const iconData = [
+  {
+    socialicon: '/skill-img/instagram-color.svg',
+    socialalt: 'Instagram Icon',
+    sociallink: 'https://www.instagram.com/setografi/',
+    socialdesc: 'Instagram Icon',
+  },
+  {
+    socialicon: '/skill-img/linkedin-color.svg',
+    socialalt: 'Linkedin Icon',
+    sociallink: 'https://www.linkedin.com/in/setografi/',
+    socialdesc: 'Linkedin Icon',
+  },
+  {
+    socialicon: '/skill-img/x-color.svg',
+    socialalt: 'Twitter Icon',
+    sociallink: 'https://x.com/wysmooncino/',
+    socialdesc: 'Twitter Icon',
+  },
+  {
+    socialicon: '/skill-img/readdotcv-color.svg',
+    socialalt: 'Read.cv Icon',
+    sociallink: 'https://read.cv/setografi',
+    socialdesc: 'Read.cv Icon',
+  },
+];
 ---
 
 <section id="about-section" class="mt-24 min-h-dvh w-full p-2 md:mt-0 md:p-4">
@@ -28,7 +56,7 @@ const jobItems = [
     class="flex h-full w-full flex-col items-center justify-end gap-4 md:items-end md:justify-start"
   >
     <div
-      class="glassmorphism border-border-100 flex max-w-lg flex-col gap-4 rounded-lg border p-6 backdrop-blur-2xl"
+      class="glassmorphism flex max-w-lg flex-col gap-4 rounded-lg border border-border-100 p-6 backdrop-blur-2xl"
     >
       <h2 class="mb-2 font-ibmPlexsans text-base font-bold text-dark-text-primary">
         Hi, I'm Wahyu Seto Pranata
@@ -61,7 +89,7 @@ const jobItems = [
     </div>
 
     <div
-      class="glassmorphism border-border-100 flex w-full max-w-lg flex-col rounded-lg border p-4 backdrop-blur-2xl"
+      class="glassmorphism flex w-full max-w-lg flex-col rounded-lg border border-border-100 p-4 backdrop-blur-2xl"
     >
       <h2 class="mb-2 font-ibmPlexsans text-base font-bold text-dark-text-primary">Experience</h2>
       {
@@ -79,6 +107,27 @@ const jobItems = [
           );
         })
       }
+    </div>
+
+    <div
+      class="glassmorphism flex w-full max-w-lg flex-col rounded-lg border border-border-100 p-4 backdrop-blur-2xl"
+    >
+      <h2 class="mb-2 font-ibmPlexsans text-base font-bold text-dark-text-primary">Contact Me?</h2>
+
+      <div class="flex flex-col items-start justify-start gap-4">
+        {
+          iconData.map((item) => {
+            return (
+              <SocialIcons
+                socialicon={item.socialicon}
+                socialalt={item.socialalt}
+                sociallink={item.sociallink}
+                socialdesc={item.socialdesc}
+              />
+            );
+          })
+        }
+      </div>
     </div>
   </div>
 </section>
