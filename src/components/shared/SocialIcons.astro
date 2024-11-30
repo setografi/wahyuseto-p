@@ -3,19 +3,11 @@ interface Props {
   socialicon: string;
   socialalt: string;
   sociallink: string;
-  socialdesc: string;
 }
 
-const { socialicon, socialalt, sociallink, socialdesc } = Astro.props;
+const { socialicon, socialalt, sociallink } = Astro.props;
 ---
 
-<a href={sociallink} target="_blank" class="group relative flex space-x-2">
-  <div class="h-8 w-8">
-    <img src={socialicon} alt={socialalt} class="h-full w-full object-cover" />
-  </div>
-  <span
-    class="absolute left-full top-1/2 w-auto min-w-max -translate-x-2 -translate-y-1/2 transform bg-white px-4 py-1 text-black opacity-0 shadow transition-all duration-500 group-hover:translate-x-2 group-hover:opacity-100"
-  >
-    {socialdesc}
-  </span>
+<a href={sociallink} target="_blank" class="h-8 w-8">
+  <img src={socialicon} alt={socialalt} class="h-full w-full object-cover" />
 </a>
