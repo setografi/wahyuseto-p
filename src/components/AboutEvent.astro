@@ -1,186 +1,21 @@
 ---
-import JobList from './shared/JobList.astro';
-import SocialIcons from './shared/SocialIcons.astro';
+import Hero from './about/Hero.astro';
+import Job from './about/Job.astro';
+import Skill from './about/Skill.astro';
+import Contact from './about/Contact.astro';
 
 export const frontmatter = {
   title: 'About',
 };
-
-const jobItems = [
-  {
-    imageprof: '/img/logo-SORE.svg',
-    job: 'Frontend Developer',
-    company: 'SORE. Pixel Crafters • Jul 2023 - Now',
-    bgColor: '#ffffff',
-    rotation: '-10deg',
-  },
-
-  {
-    job: 'Graphic Designer and Social Media Staff',
-    company: 'Maritim Muda Nusantara • Feb 2023 - Jun 2023',
-    bgColor: '#12aec7',
-    rotation: '10deg',
-  },
-];
-
-const iconData = [
-  {
-    socialicon: '/skill-img/instagram-color.svg',
-    socialalt: 'Instagram Icon',
-    sociallink: 'https://www.instagram.com/setografi/',
-  },
-  {
-    socialicon: '/skill-img/linkedin-color.svg',
-    socialalt: 'Linkedin Icon',
-    sociallink: 'https://www.linkedin.com/in/setografi/',
-  },
-  {
-    socialicon: '/skill-img/x-color.svg',
-    socialalt: 'Twitter Icon',
-    sociallink: 'https://x.com/wysmooncino/',
-  },
-  {
-    socialicon: '/skill-img/readdotcv-color.svg',
-    socialalt: 'Read.cv Icon',
-    sociallink: 'https://read.cv/setografi',
-  },
-];
 ---
 
 <section id="about-section" class="mt-24 min-h-dvh w-full p-2 md:mt-0 md:p-4">
   <div
     class="flex h-full w-full flex-col items-center justify-end gap-4 md:items-end md:justify-start"
   >
-    <div
-      class="glassmorphism flex max-w-lg flex-col gap-4 rounded-lg border border-border-100 p-6 backdrop-blur-2xl"
-    >
-      <h2 class="mb-2 font-ibmPlexsans text-base font-bold text-dark-text-primary">
-        Hi, I'm Wahyu Seto Pranata
-      </h2>
-
-      <div class="flex flex-col space-y-4">
-        <p class="text-sm font-normal text-dark-text-primary md:text-base">
-          Someone who spends a lot of leisure time enjoying restful sleep and a warm cup of coffee.
-          In between, I enjoy learning new things and trying them out. From this habit, I have
-          gained experience in the fields of Design and Development.
-        </p>
-
-        <p class="text-sm font-normal text-dark-text-primary md:text-base">
-          I started my career as a Graphic Designer and later transitioned to a Frontend Developer.
-          Although these two fields are different, my design knowledge and experience have greatly
-          helped me in building applications with unique designs and UI that reflect my personal
-          style.
-        </p>
-
-        <p class="text-sm font-normal text-dark-text-primary md:text-base">
-          Additionally, I enjoy writing blogs to share the knowledge I’ve gained and the experiences
-          I’ve had.
-        </p>
-
-        <p class="text-sm font-normal text-dark-text-primary md:text-base">
-          I also have a hobby in photography and creating typography content on Instagram, which I
-          often post on my Instagram account.
-        </p>
-      </div>
-    </div>
-
-    <div
-      class="glassmorphism flex w-full max-w-lg flex-col rounded-lg border border-border-100 p-4 backdrop-blur-2xl"
-    >
-      <h2 class="mb-2 font-ibmPlexsans text-base font-bold text-dark-text-primary">Experience</h2>
-      {
-        jobItems.map((item) => {
-          return (
-            <div class="w-full md:max-w-fit">
-              <JobList
-                imageprof={item.imageprof}
-                job={item.job}
-                company={item.company}
-                bgColor={item.bgColor}
-                rotation={item.rotation}
-              />
-            </div>
-          );
-        })
-      }
-    </div>
-
-    <div
-      class="glassmorphism flex w-full max-w-lg flex-col gap-2 rounded-lg border border-border-100 p-4 backdrop-blur-2xl"
-    >
-      <button
-        data-dropdown="social"
-        class="dropdown-btn font-ibmPlexsans text-base font-bold text-dark-text-primary"
-      >
-        Contact Me?
-      </button>
-
-      <div
-        id="dropdown-social"
-        class="dropdown-content flex flex-row items-start justify-center space-x-6 overflow-hidden transition-all duration-500"
-        style="max-height: 0;"
-      >
-        {
-          iconData.map((item) => (
-            <SocialIcons
-              socialicon={item.socialicon}
-              socialalt={item.socialalt}
-              sociallink={item.sociallink}
-            />
-          ))
-        }
-      </div>
-    </div>
+    <Hero />
+    <Job />
+    <Skill />
+    <Contact />
   </div>
-
-  <script>
-    let activeDropdown = null;
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const buttons = document.querySelectorAll('.dropdown-btn');
-
-      buttons.forEach((button) => {
-        button.addEventListener('click', function () {
-          const dropdownId = this.getAttribute('data-dropdown');
-          const dropdown = document.getElementById(`dropdown-${dropdownId}`);
-
-          if (activeDropdown === dropdown) {
-            toggleDropdown(dropdown, false);
-            return;
-          }
-
-          if (activeDropdown) {
-            toggleDropdown(activeDropdown, false);
-          }
-
-          toggleDropdown(dropdown, true);
-        });
-      });
-    });
-
-    function toggleDropdown(dropdown, show = null) {
-      const isHidden = dropdown.classList.contains('hidden');
-      const shouldShow = show !== null ? show : isHidden;
-
-      if (shouldShow) {
-        dropdown.classList.remove('hidden');
-        setTimeout(() => {
-          dropdown.style.maxHeight = `${dropdown.scrollHeight}px`;
-        }, 0);
-        dropdown.style.opacity = '1';
-        dropdown.style.transform = 'translateY(0)';
-        activeDropdown = dropdown;
-      } else {
-        dropdown.style.maxHeight = '0px';
-        dropdown.style.opacity = '0';
-        dropdown.style.transform = 'translateY(-10px)';
-        setTimeout(() => {
-          dropdown.classList.add('hidden');
-        }, 300);
-        if (activeDropdown === dropdown) {
-          activeDropdown = null;
-        }
-      }
-    }
-  </script>
 </section>

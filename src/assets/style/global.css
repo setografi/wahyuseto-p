@@ -25,7 +25,24 @@ body {
     rgba(30, 30, 30, 0.4) /* neutral 800 */,
     rgba(66, 66, 66, 0.2) /* neutral 700 */
   );
+}
+
+.glow-shadow {
   box-shadow:
     0 0 10px rgba(171, 71, 188, 0.4) /* Purple glow */,
     0 0 20px rgba(206, 153, 242, 0.3); /* Lavender soft glow */
 }
+
+/* ::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: rgba(30, 30, 30, 0.4);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(186, 104, 200, 0.8);
+  border-radius: 0.2rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(154, 68, 192, 1);
+} */

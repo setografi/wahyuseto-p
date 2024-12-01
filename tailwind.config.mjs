@@ -15,43 +15,6 @@ export default {
           800: '#1E1E1E',
           900: '#0A0A0A',
         },
-        border: {
-          100: '#E0E0E0',
-          200: '#757575',
-          300: '#424242',
-        },
-        light: {
-          background: {
-            primary: '#FFFFFF',
-            secondary: '#F7FAFC',
-            tertiary: '#E5E7EB',
-          },
-          text: {
-            primary: '#1A1A1A',
-            secondary: '#343A40',
-            tertiary: '#6C757D',
-          },
-          border: {
-            light: '#DEE2E6',
-            medium: '#ADB5BD',
-          },
-        },
-        dark: {
-          background: {
-            primary: '#121212',
-            secondary: '#1A1A1A',
-            tertiary: '#2B2B2B',
-          },
-          text: {
-            primary: '#FFFFFF',
-            secondary: '#CCCCCC',
-            tertiary: '#999999',
-          },
-          border: {
-            light: '#3C3C3C',
-            medium: '#5A5A5A',
-          },
-        },
         accent: {
           purple: {
             100: '#F3E5F5',
@@ -91,6 +54,10 @@ export default {
             400: '#F57F17',
           },
         },
+      },
+      backgroundImage: {
+        'radial-gradient':
+          'radial-gradient(ellipse at top, transparent 60%, rgba(128, 90, 213, 0.4))',
       },
       fontFamily: {
         ibmPlexsans: ['IBM Plex Sans', 'sans-serif'],

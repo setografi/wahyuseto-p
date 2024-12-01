@@ -1,0 +1,41 @@
+---
+import JobList from '../shared/JobList.astro';
+
+const jobItems = [
+  {
+    imageprof: '/img/logo-SORE.svg',
+    job: 'Frontend Developer',
+    company: 'SORE. Pixel Crafters • Jul 2023 - Now',
+    bgColor: '#ffffff',
+    rotation: '-10deg',
+  },
+
+  {
+    job: 'Graphic Designer and Social Media Staff',
+    company: 'Maritim Muda Nusantara • Feb 2023 - Jun 2023',
+    bgColor: '#12aec7',
+    rotation: '10deg',
+  },
+];
+---
+
+<div
+  class="glassmorphism glow-shadow flex w-full max-w-lg flex-col rounded-lg border border-accent-lavender-400/60 p-4 backdrop-blur-2xl"
+>
+  <h2 class="mb-2 font-ibmPlexsans text-base font-bold text-neutral-100">Experience</h2>
+  {
+    jobItems.map((item) => {
+      return (
+        <div class="w-full md:max-w-fit">
+          <JobList
+            imageprof={item.imageprof}
+            job={item.job}
+            company={item.company}
+            bgColor={item.bgColor}
+            rotation={item.rotation}
+          />
+        </div>
+      );
+    })
+  }
+</div>
