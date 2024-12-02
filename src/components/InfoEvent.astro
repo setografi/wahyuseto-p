@@ -1,6 +1,7 @@
 ---
-import MusicPlayerEvent from './shared/MusicPlayerEvent.jsx';
-import ProgressEvent from './shared/ProgressEvent.astro';
+import MusicPlayerEvent from './info/MusicPlayerEvent.jsx';
+import ProgressEvent from './info/ProgressEvent.astro';
+import ChatWidget from './info/ChatWidget.astro';
 
 export const frontmatter = {
   title: 'Info',
@@ -12,9 +13,9 @@ export const frontmatter = {
     class="flex h-full w-full flex-col items-end justify-center gap-4 md:flex-row md:items-start md:justify-end"
   >
     <div
-      class="glassmorphism glow-shadow flex w-full items-start justify-center rounded-lg border border-accent-lavender-400/60 p-4 backdrop-blur-2xl"
+      class="glassmorphism glow-shadow flex h-full w-full items-start justify-center rounded-lg border border-accent-lavender-400/60 p-4 backdrop-blur-2xl"
     >
-      Hello
+      <ChatWidget />
     </div>
 
     <div class="flex max-w-lg flex-col gap-4">
