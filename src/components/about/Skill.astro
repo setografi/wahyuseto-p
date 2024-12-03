@@ -1,35 +1,44 @@
+---
+import { skills } from '../../constants/skill';
+---
+
 <div
-  class="glassmorphism glow-shadow flex w-full max-w-xl flex-col rounded-lg border border-accent-lavender-400/60 p-4 backdrop-blur-2xl"
+  class="glassmorphism glow-shadow w-full max-w-xl rounded-lg border border-accent-lavender-400/60 p-4 backdrop-blur-2xl"
 >
-  <h2 class="mb-2 font-ibmPlexsans text-base font-bold text-neutral-100">
-    Here are some skills and technologies I have learned
+  <h2 class="mb-4 font-ibmPlexsans text-base font-bold text-neutral-100">
+    Skills and Technologies
   </h2>
 
-  <div class="grid grid-cols-2">
-    <div class="flex flex-col items-start justify-start gap-1">
-      <h3 class="text-sm text-neutral-100 md:text-base">Languages:</h3>
-
-      <ul class="grid list-outside list-disc grid-flow-row px-4 text-neutral-300">
-        <li class="text-xs md:text-sm">HTML</li>
-        <li class="text-xs md:text-sm">CSS</li>
-        <li class="text-xs md:text-sm">Javascript</li>
-        <li class="text-xs md:text-sm">Python</li>
-        <li class="text-xs md:text-sm">C#</li>
-        <li class="text-xs md:text-sm">Elixir</li>
-      </ul>
-    </div>
-
-    <div class="flex flex-col items-start justify-start gap-1">
-      <h3 class="text-sm text-neutral-100 md:text-base">Frameworks & Libraries:</h3>
-
-      <ul class="grid list-outside list-disc grid-flow-row px-4 text-neutral-300">
-        <li class="text-xs md:text-sm">React JS</li>
-        <li class="text-xs md:text-sm">Tailwind CSS</li>
-        <li class="text-xs md:text-sm">Alpine JS</li>
-        <li class="text-xs md:text-sm">Astro JS</li>
-        <li class="text-xs md:text-sm">Next JS</li>
-        <li class="text-xs md:text-sm">React Native</li>
-      </ul>
-    </div>
+  <div id="skills-container" class="flex flex-wrap items-center justify-start gap-2">
+    {
+      skills.map((skill) => (
+        <div
+          class={`flex transform items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold transition-all duration-300 hover:scale-105 md:text-sm ${skill.bgColor} ${skill.textColor}`}
+        >
+          {skill.image && <img src={skill.image} alt={skill.name} class="mr-1 h-4 w-4" />}
+          {skill.name}
+        </div>
+      ))
+    }
   </div>
 </div>
+
+<script>
+  const skillsContainer = document.getElementById('skills-container');
+
+  if (skillsContainer) {
+    skillsContainer.addEventListener('mouseover', (e) => {
+      const skillPill = (e.target as HTMLElement).closest('div');
+      if (skillPill) {
+        skillPill.classList.add('shadow-lg');
+      }
+    });
+
+    skillsContainer.addEventListener('mouseout', (e) => {
+      const skillPill = (e.target as HTMLElement).closest('div');
+      if (skillPill) {
+        skillPill.classList.remove('shadow-lg');
+      }
+    });
+  }
+</script>
