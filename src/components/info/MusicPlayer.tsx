@@ -1,20 +1,22 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 
-function MusicPlayerEvent() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef(null);
+const MusicPlayer: React.FC = () => {
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const togglePlayPause = () => {
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
+  const togglePlayPause = (): void => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
     }
-    setIsPlaying(!isPlaying);
   };
 
   return (
-    <div className="glassmorphism glow-shadow flex h-fit w-full flex-col items-center justify-center rounded-lg border border-accent-lavender-400/60 p-4 backdrop-blur-2xl md:flex-row">
+    <div className="glassmorphism glow-shadow flex h-fit w-full flex-col items-center justify-center rounded-lg border border-accent-lavender-400/60 p-4 backdrop-blur-2xl md:flex-row md:justify-start">
       <audio ref={audioRef} src="/music/mixkit-fun-jazz-647.mp3" loop />
 
       <div className="relative h-36 w-36">
@@ -34,7 +36,7 @@ function MusicPlayerEvent() {
         </div>
       </div>
 
-      <div className="text-neutral-100 md:mx-auto">
+      <div className="text-neutral-100">
         <div className="flex flex-col items-start justify-center">
           <h2 className="text-base font-medium">Fun Jazz</h2>
           <h3 className="mb-1 text-base hover:underline">Francisco Alvear</h3>
@@ -57,6 +59,6 @@ function MusicPlayerEvent() {
       </div>
     </div>
   );
-}
+};
 
-export default MusicPlayerEvent;
+export default MusicPlayer;

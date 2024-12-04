@@ -1,25 +1,23 @@
 ---
-import MusicPlayerEvent from './info/MusicPlayerEvent.jsx';
+import ChatWidget from './info/ChatWidget.tsx';
+import MusicPlayer from './info/MusicPlayer.tsx';
 import ProgressEvent from './info/ProgressEvent.astro';
-import ChatWidget from './info/ChatWidget.astro';
 
 export const frontmatter = {
   title: 'Info',
 };
 ---
 
-<section id="info-section" class="mt-28 min-h-dvh w-full p-2 md:mb-0 md:p-4">
+<section id="info-section" class="mt-28 h-full w-full p-2 md:mt-0 md:p-4">
   <div
-    class="flex h-full w-full flex-col items-end justify-center gap-4 md:flex-row md:items-start md:justify-end"
+    class="grid h-full w-full grid-cols-1 items-end justify-center gap-4 md:grid-flow-col md:grid-cols-3 md:flex-row md:items-start md:justify-end"
   >
-    <div
-      class="glassmorphism glow-shadow flex h-full w-full items-start justify-center rounded-lg border border-accent-lavender-400/60 p-4 backdrop-blur-2xl"
-    >
-      <ChatWidget />
+    <div class="h-[31.25rem] md:col-span-2 md:h-full">
+      <ChatWidget client:load />
     </div>
 
-    <div class="flex w-full max-w-lg flex-col gap-4">
-      <MusicPlayerEvent client:load />
+    <div class="grid grid-flow-row gap-4">
+      <MusicPlayer client:load />
       <ProgressEvent />
     </div>
   </div>
