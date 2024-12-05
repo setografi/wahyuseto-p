@@ -1,10 +1,39 @@
-import React, { useRef, useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { songs } from '../../constants/music';
 
 const MusicPlayer: React.FC = () => {
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [currentSongIndex, setCurrentSongIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
-  const togglePlayPause = (): void => {
+  const handleChangeMusic = (
+    options: {
+      isPrev?: boolean;
+      playListIndex?: number;
+    } = {}
+  ) => {
+    let newIndex = currentSongIndex;
+
+    if (options.playListIndex !== undefined) {
+      newIndex = options.playListIndex;
+    } else if (options.isPrev) {
+      newIndex = Math.max(0, currentSongIndex - 1);
+    } else {
+      newIndex = Math.min(songs.length - 1, currentSongIndex + 1);
+    }
+
+    setCurrentSongIndex(newIndex);
+
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      if (isPlaying) {
+        audioRef.current.play();
+      }
+    }
+  };
+
+  const togglePlay = () => {
     if (audioRef.current) {
       if (isPlaying) {
         audioRef.current.pause();
@@ -15,48 +44,100 @@ const MusicPlayer: React.FC = () => {
     }
   };
 
+  const handleTimeUpdate = () => {
+    if (audioRef.current) {
+      setCurrentTime(audioRef.current.currentTime);
+    }
+  };
+
+  const handleScrub = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (audioRef.current) {
+      const progressBar = e.currentTarget;
+      const rect = progressBar.getBoundingClientRect();
+      const percent = (e.clientX - rect.left) / rect.width;
+      audioRef.current.currentTime = percent * audioRef.current.duration;
+    }
+  };
+
+  const progressWidth = audioRef.current ? (currentTime / audioRef.current.duration) * 100 : 0;
+
   return (
-    <div className="glassmorphism glow-shadow flex h-fit w-full flex-col items-center justify-center rounded-lg border border-accent-lavender-400/60 p-4 backdrop-blur-2xl md:flex-row md:justify-start">
-      <audio ref={audioRef} src="/music/mixkit-fun-jazz-647.mp3" loop />
+    <div className="music-player glassmorphism glow-shadow flex h-56 w-full flex-col overflow-hidden rounded-lg border border-accent-lavender-400/60 p-4 backdrop-blur-2xl md:h-60 lg:h-72">
+      <audio
+        ref={audioRef}
+        src={songs[currentSongIndex].files.song}
+        onTimeUpdate={handleTimeUpdate}
+        onEnded={() => handleChangeMusic()}
+      />
+      <div className="slider relative flex items-center justify-start space-x-2 pb-4">
+        <div className="slider__content group relative">
+          <div className="h-16 w-16 overflow-hidden rounded-3xl">
+            <img
+              src={songs[currentSongIndex].files.cover}
+              alt={songs[currentSongIndex].songName}
+              className="h-full w-full object-cover transition-all duration-500 group-hover:scale-125"
+            />
+          </div>
 
-      <div className="relative h-36 w-36">
-        <div className="w-fit">
-          <div className="flex h-32 w-32 animate-rotate items-center justify-center rounded-full bg-neutral-900">
-            <div className="flex h-20 w-20 items-center justify-center rounded-full border-x-2 border-y-2 border-x-neutral-900 border-y-neutral-200">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-neutral-200">
-                <div className="h-4 w-4 rounded-full bg-neutral-900"></div>
-              </div>
+          <button
+            className="absolute inset-0 flex items-center justify-center"
+            onClick={togglePlay}
+          >
+            {isPlaying ? (
+              <i className="ri-pause-fill text-4xl text-white"></i>
+            ) : (
+              <i className="ri-play-fill text-4xl text-white"></i>
+            )}
+          </button>
+        </div>
+
+        <div className="flex w-full flex-col items-center justify-center space-y-2 px-4">
+          <div className="slider__controls flex w-full items-center justify-between">
+            <button onClick={() => handleChangeMusic({ isPrev: true })}>
+              <i className="ri-skip-left-fill text-3xl"></i>
+            </button>
+            <div className="flex flex-col items-center">
+              <div className="text-xl font-bold">{songs[currentSongIndex].artist}</div>
+              <div className="text-sm text-neutral-500">{songs[currentSongIndex].songName}</div>
             </div>
+            <button onClick={() => handleChangeMusic()}>
+              <i className="ri-skip-right-fill text-3xl"></i>
+            </button>
           </div>
-        </div>
 
-        <div className="absolute bottom-0 right-0 mb-2 mr-2 flex w-fit -rotate-45 flex-col items-center justify-center">
-          <div className="absolute bottom-0 mb-1 h-11 w-2 bg-neutral-200"></div>
-          <div className="z-[1] h-5 w-5 rounded-full bg-neutral-200"></div>
+          <div
+            className="progress h-2 w-full cursor-pointer rounded-full bg-neutral-800/40"
+            onClick={handleScrub}
+          >
+            <div
+              className="progress__bar h-full rounded-full bg-gradient-to-tl from-purple-500 to-accent-lavender-500"
+              style={{ width: `${progressWidth}%` }}
+            />
+          </div>
         </div>
       </div>
 
-      <div className="text-neutral-100">
-        <div className="flex flex-col items-start justify-center">
-          <h2 className="text-base font-medium">Fun Jazz</h2>
-          <h3 className="mb-1 text-base hover:underline">Francisco Alvear</h3>
-        </div>
-
-        <div className="flex items-start justify-between space-x-4">
-          <i className="ri-volume-up-line cursor-not-allowed text-lg text-neutral-500"></i>
-          <div className="flex items-center justify-center gap-4">
-            <i className="ri-rewind-line cursor-pointer text-lg transition-colors duration-500 hover:text-purple-500"></i>
-            <i
-              className={`${
-                isPlaying ? 'ri-pause-line' : 'ri-play-line'
-              } cursor-pointer text-lg transition-colors duration-500 hover:text-purple-500`}
-              onClick={togglePlayPause}
-            ></i>
-            <i className="ri-speed-line cursor-pointer text-lg transition-colors duration-500 hover:text-purple-500"></i>
-          </div>
-          <i className="ri-heart-3-fill cursor-pointer text-lg text-accent-magenta-500 transition-colors duration-500"></i>
-        </div>
-      </div>
+      <ul className="music-player__playlist flex flex-col justify-start overflow-y-auto">
+        {songs.map((song, index) => (
+          <li
+            key={index}
+            className={`flex cursor-pointer items-center border-b border-neutral-300 py-2 ${
+              index === currentSongIndex ? 'bg-neutral-800/40' : ''
+            }`}
+            onClick={() => handleChangeMusic({ playListIndex: index })}
+          >
+            <img
+              src={song.files.cover}
+              alt={song.songName}
+              className="mr-4 h-16 w-16 rounded-3xl"
+            />
+            <div>
+              <div className="font-bold">{song.songName}</div>
+              <div className="text-sm text-neutral-300">{song.artist}</div>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
