@@ -12,11 +12,11 @@ export interface Song {
 
 export const songs: Song[] = [
   {
-    songName: 'Example Song 1',
-    artist: 'Artist Name 1',
+    songName: 'Write This Down',
+    artist: '2Pac, Pop Smoke',
     files: {
-      cover: '/img/profileimage2.jpg',
-      song: '/music/mixkit-fun-jazz-647.mp3',
+      cover: '/img/cover-song-01.webp',
+      song: '/music/2Pac_Pop_Smoke-Write_This_Down.mp3',
     },
   },
   {

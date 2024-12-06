@@ -15,7 +15,9 @@ import { skills } from '../../constants/skill';
         <div
           class={`flex transform items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold transition-all duration-300 hover:scale-105 md:text-sm ${skill.bgColor} ${skill.textColor}`}
         >
-          {skill.image && <img src={skill.image} alt={skill.name} class="mr-1 h-4 w-4" />}
+          {skill.image && (
+            <img src={skill.image} alt={skill.name} loading="lazy" class="mr-1 h-4 w-4" />
+          )}
           {skill.name}
         </div>
       ))

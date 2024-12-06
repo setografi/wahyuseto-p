@@ -10,6 +10,6 @@ const { socialicon, socialalt, sociallink } = Astro.props;
 
 <a href={sociallink} target="_blank" class="m-2">
   <div class="h-6 w-6">
-    <img src={socialicon} alt={socialalt} class="h-full w-full object-cover" />
+    <img src={socialicon} alt={socialalt} loading="lazy" class="h-full w-full object-cover" />
   </div>
 </a>

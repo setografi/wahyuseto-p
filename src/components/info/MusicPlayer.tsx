@@ -75,7 +75,7 @@ const MusicPlayer: React.FC = () => {
             <img
               src={songs[currentSongIndex].files.cover}
               alt={songs[currentSongIndex].songName}
-              className="h-full w-full object-cover transition-all duration-500 group-hover:scale-125"
+              className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:scale-125 group-hover:grayscale-0"
             />
           </div>
 
@@ -106,7 +106,7 @@ const MusicPlayer: React.FC = () => {
           </div>
 
           <div
-            className="progress h-2 w-full cursor-pointer rounded-full bg-neutral-800/40"
+            className="progress h-2 w-full cursor-pointer rounded-full bg-neutral-800/60"
             onClick={handleScrub}
           >
             <div
@@ -122,14 +122,14 @@ const MusicPlayer: React.FC = () => {
           <li
             key={index}
             className={`flex cursor-pointer items-center border-b border-neutral-300 py-2 ${
-              index === currentSongIndex ? 'bg-neutral-800/40' : ''
+              index === currentSongIndex ? 'bg-neutral-800/60' : ''
             }`}
             onClick={() => handleChangeMusic({ playListIndex: index })}
           >
             <img
               src={song.files.cover}
               alt={song.songName}
-              className="mr-4 h-16 w-16 rounded-3xl"
+              className="mr-4 h-16 w-16 rounded-3xl grayscale"
             />
             <div>
               <div className="font-bold">{song.songName}</div>
