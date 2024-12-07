@@ -123,8 +123,8 @@ const MusicPlayer: React.FC = () => {
         {songs.map((song, index) => (
           <li
             key={index}
-            className={`flex cursor-pointer items-center border-b border-neutral-300 py-2 ${
-              index === currentSongIndex ? 'bg-neutral-900' : ''
+            className={`flex cursor-pointer items-center border-b border-neutral-300 p-2 ${
+              index === currentSongIndex ? 'rounded-md bg-neutral-800/60' : ''
             }`}
             onClick={() => handleChangeMusic({ playListIndex: index })}
           >

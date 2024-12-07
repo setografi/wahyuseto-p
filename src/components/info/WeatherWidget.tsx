@@ -63,7 +63,7 @@ const WeatherWidget: React.FC<Props> = ({ data }) => {
         onClick={toggleDropdown}
       >
         <div>
-          <span className="text-lg font-semibold">{data.city}</span>
+          <span className="font-ibmPlexsans text-lg font-semibold">{data.city}</span>
           <small className="flex items-center text-sm opacity-70">
             <span>{data.kind}</span>
             <span className="mx-2">&bull;</span>

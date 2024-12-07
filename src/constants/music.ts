@@ -16,15 +16,23 @@ export const songs: Song[] = [
     artist: '2Pac, Pop Smoke',
     files: {
       cover: '/img/cover-song-01.webp',
-      song: '/music/2Pac_Pop_Smoke-Write_This_Down.mp3',
+      song: '/music/twopac_pop_smoke-write_this_down.mp3',
     },
   },
   {
-    songName: 'Example Song 2',
-    artist: 'Artist Name 2',
+    songName: 'The Scientist',
+    artist: 'Coldplay',
     files: {
-      cover: '/img/logo_6.png',
-      song: '/music/mixkit-fun-jazz-647.mp3',
+      cover: '/img/cover-song-02.webp',
+      song: '/music/coldplay-the_scientist.mp3',
+    },
+  },
+  {
+    songName: 'Psychosocial',
+    artist: 'Slipknot',
+    files: {
+      cover: '/img/cover-song-03.webp',
+      song: '/music/slipknot-psychosocial.mp3',
     },
   },
   // Add more songs as needed
