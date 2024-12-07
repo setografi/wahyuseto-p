@@ -97,7 +97,9 @@ const MusicPlayer: React.FC = () => {
               <i className="ri-skip-left-fill text-3xl"></i>
             </button>
             <div className="flex flex-col items-center">
-              <div className="text-xl font-bold">{songs[currentSongIndex].artist}</div>
+              <div className="font-ibmPlexsans text-lg font-bold text-neutral-100 md:text-xl">
+                {songs[currentSongIndex].artist}
+              </div>
               <div className="text-sm text-neutral-500">{songs[currentSongIndex].songName}</div>
             </div>
             <button onClick={() => handleChangeMusic()}>
@@ -122,7 +124,7 @@ const MusicPlayer: React.FC = () => {
           <li
             key={index}
             className={`flex cursor-pointer items-center border-b border-neutral-300 py-2 ${
-              index === currentSongIndex ? 'bg-neutral-800/60' : ''
+              index === currentSongIndex ? 'bg-neutral-900' : ''
             }`}
             onClick={() => handleChangeMusic({ playListIndex: index })}
           >
@@ -132,8 +134,8 @@ const MusicPlayer: React.FC = () => {
               className="mr-4 h-16 w-16 rounded-3xl grayscale"
             />
             <div>
-              <div className="font-bold">{song.songName}</div>
-              <div className="text-sm text-neutral-300">{song.artist}</div>
+              <div className="text-sm font-bold md:text-base">{song.songName}</div>
+              <div className="text-xs text-neutral-300 md:text-sm">{song.artist}</div>
             </div>
           </li>
         ))}

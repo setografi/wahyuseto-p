@@ -23,7 +23,7 @@ export const songs: Song[] = [
     songName: 'Example Song 2',
     artist: 'Artist Name 2',
     files: {
-      cover: '/img/profileimage2.jpg',
+      cover: '/img/logo_6.png',
       song: '/music/mixkit-fun-jazz-647.mp3',
     },
   },

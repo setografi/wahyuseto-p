@@ -32,7 +32,7 @@ const ChatWidget: React.FC = () => {
   const animateReadIcon = (checkmarkDiv: HTMLElement) => {
     setTimeout(() => {
       checkmarkDiv.classList.replace('text-neutral-500', 'text-blue-500');
-    }, 800); // Transition effect delay
+    }, 800);
   };
 
   const insertPersonalMessage = (msg: string) => {
@@ -76,7 +76,6 @@ const ChatWidget: React.FC = () => {
   const insertFakeMessage = () => {
     if (!messagesContentRef.current) return;
 
-    // Simulate typing indicator
     const typingIndicator = document.createElement('div');
     typingIndicator.classList.add(
       'message',
@@ -101,10 +100,8 @@ const ChatWidget: React.FC = () => {
     scrollToBottom();
 
     setTimeout(() => {
-      // Remove typing indicator
       typingIndicator.remove();
 
-      // Add fake message
       const messageDiv = document.createElement('div');
       messageDiv.classList.add(
         'message',
@@ -124,7 +121,6 @@ const ChatWidget: React.FC = () => {
       setDate(messageDiv);
       scrollToBottom();
 
-      // Update index
       setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % fakeMessages.length);
     }, 1500);
   };
@@ -143,7 +139,6 @@ const ChatWidget: React.FC = () => {
   };
 
   useEffect(() => {
-    // Simulate initial message
     setTimeout(() => {
       insertFakeMessage();
     }, 1000);
